@@ -1,0 +1,35 @@
+---
+title: "Gasless Trading"
+description: "Trade without paying gas fees on Polygon."
+---
+
+Noma covers all gas fees on Polygon, so you never need to hold MATIC or worry about transaction costs.
+
+## How it works
+
+Noma uses a **relayer architecture** powered by Polymarket's Builder Relayer:
+
+1. You sign a transaction with your wallet (a simple signature, not a gas-consuming transaction)
+2. Noma's relayer submits the transaction on-chain and pays the gas fee
+3. The transaction executes on Polygon and your trade is placed
+
+This applies to:
+- **Wallet setup** — Deploying your Trading Safe and setting approvals
+- **Trading** — Placing and cancelling orders
+- **Redemption** — Claiming payouts from resolved markets
+
+## Why gasless?
+
+Traditional DeFi requires users to hold the network's native token (MATIC for Polygon) to pay for transactions. This adds friction:
+- New users need to acquire MATIC before they can do anything
+- Gas prices fluctuate, making costs unpredictable
+- Failed transactions still cost gas
+
+Noma eliminates all of this. You only need USDC.e to trade.
+
+## Security
+
+Gasless doesn't mean trustless is compromised. Every transaction is:
+- **Signed by you** — The relayer can only submit transactions you've authorized
+- **Non-custodial** — Noma never has access to your funds
+- **Verifiable** — All transactions are on-chain and can be verified on Polygonscan

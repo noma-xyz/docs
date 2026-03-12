@@ -1,0 +1,46 @@
+---
+title: "Deposits"
+description: "How to deposit funds for trading on noma."
+---
+
+## Supported networks
+
+| Network | Token | Use |
+|---------|-------|-----|
+| **Polygon** | USDC.e (bridged USDC) | Polymarket-powered prediction markets |
+| **Solana** | SOL | Solana-based markets and future Kalshi integration |
+
+## Depositing on Polygon
+
+Polygon deposits go to your **Trading Safe** — a smart contract wallet that holds your trading funds.
+
+<Warning>
+If you haven't set up your Trading Safe yet, Nomawill prompt you to complete the one-time [wallet setup](/wallet/setup) before you can deposit.
+</Warning>
+
+### Methods
+
+1. **QR code** — Scan with any wallet app to send USDC.e directly to your Safe
+2. **Direct transfer** — Copy your Safe address and send USDC.e from any Polygon wallet
+3. **On-ramp** — Buy USDC with a debit card or bank transfer via MoonPay (built into the deposit modal)
+
+### Important notes
+
+- Send **USDC.e** (bridged USDC), not native USDC. The contract address is `0x2791Bca1f2de4661ED88A30C99A7a9449Aa84174`
+- Send to your **Safe address**, not your embedded wallet address. Your Safe address is shown in the deposit modal and the balance tooltip
+- Deposits typically confirm in under 30 seconds on Polygon
+
+## Depositing on Solana
+
+Solana deposits go directly to your embedded Solana wallet address. Use the deposit modal to view your address or QR code.
+
+## Checking your balance
+
+Your USDC.e balance is shown in the top-right corner of the app. Click it to see:
+- Your current balance
+- Your Safe address (Polygon)
+- Quick access to the deposit modal
+
+<Note>
+Balance updates may take a few seconds after a deposit confirms on-chain.
+</Note>

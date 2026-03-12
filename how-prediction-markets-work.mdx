@@ -1,0 +1,56 @@
+---
+title: "How Prediction Markets Work"
+description: "A primer on prediction markets, shares, and payouts."
+---
+
+## The basics
+
+A prediction market lets you trade on the outcome of future events. Each market poses a yes-or-no question — for example:
+
+> "Will Bitcoin be above $90,000 on March 15?"
+
+You buy **Yes** or **No** shares based on what you think will happen.
+
+## Shares and prices
+
+- Share prices range from **$0.01** to **$0.99**
+- The price reflects the market's implied probability of that outcome
+- **Yes price + No price = $1.00** (always)
+
+For example, if Yes shares trade at **$0.65**, the market implies a 65% chance of the event happening. No shares would cost **$0.35**.
+
+## How payouts work
+
+When the market resolves:
+- **Winning shares** pay out **$1.00 each**
+- **Losing shares** pay out **$0.00**
+
+<Note>
+**Example:** You buy 100 Yes shares at $0.40 each (cost: $40). If the event happens, you receive $100 — a $60 profit. If it doesn't, you lose your $40 stake.
+</Note>
+
+## Selling before resolution
+
+You don't have to wait for a market to resolve. You can sell your shares at any time at the current market price. If the price has moved in your favor, you can lock in a profit early.
+
+## Where does the liquidity come from?
+
+Noma aggregates markets from regulated and decentralized exchanges:
+
+| Source | Description |
+|--------|-------------|
+| **Polymarket** | The largest decentralized prediction market on Polygon |
+| **Kalshi** | CFTC-regulated event contracts (via DFlow on Solana) |
+
+All trading uses real orderbooks with real liquidity — not simulated or synthetic markets.
+
+## Key terms
+
+| Term | Definition |
+|------|------------|
+| **Share** | A contract that pays $1 if the outcome is correct, $0 otherwise |
+| **Yes/No** | The two sides of a binary market |
+| **Orderbook** | The list of open buy and sell orders at various prices |
+| **Midpoint** | The average of the best bid and best ask price |
+| **Resolution** | When a market's outcome is determined and shares are settled |
+| **Condition ID** | The unique on-chain identifier for a market's outcome condition |

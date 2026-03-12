@@ -1,0 +1,41 @@
+---
+title: "Security"
+description: "How Noma protects your funds and data."
+---
+
+## Non-custodial architecture
+
+Noma never has access to your private keys or funds:
+
+- **Embedded wallets** are created and managed by [Privy](https://privy.io). Private keys are generated on your device and never sent to Noma's servers.
+- **Trading Safes** are Gnosis Safe smart contracts on Polygon. Only your embedded wallet (EOA) can authorize transactions.
+- **Trading credentials** (CLOB API keys) are encrypted at rest using AES-256-GCM encryption before being stored on Noma's backend.
+
+## Transaction security
+
+Every transaction on Noma is:
+
+1. **Signed by you** — You approve each transaction with your wallet. Noma's relayer can only submit transactions you've explicitly signed.
+2. **On-chain** — All trades execute on Polygon and are verifiable on [Polygonscan](https://polygonscan.com).
+3. **Gasless** — Noma pays gas fees via a relayer, but cannot modify or redirect your signed transactions.
+
+## Data protection
+
+- Authentication is handled by Privy with support for wallet, email, Twitter, and Discord sign-in
+- Sessions use HttpOnly cookies with secure flags
+- No sensitive data is stored in local storage or exposed to client-side JavaScript
+
+## Smart contract dependencies
+
+Noma interacts with battle-tested smart contracts:
+
+| Contract | Description |
+|----------|-------------|
+| **Gnosis Safe** | Multi-sig wallet framework — secures billions in DeFi |
+| **Polymarket CTF Exchange** | Conditional Token Framework for prediction market trading |
+| **UMA Optimistic Oracle** | Decentralized dispute resolution for market outcomes |
+| **USDC.e** | Circle's bridged USDC on Polygon |
+
+## Reporting vulnerabilities
+
+If you discover a security vulnerability, please report it responsibly via [Discord](https://discord.gg) or email. Do not disclose vulnerabilities publicly before they are addressed.

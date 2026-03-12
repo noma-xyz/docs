@@ -1,0 +1,49 @@
+---
+title: "5-Minute Markets"
+description: "Ultra-short prediction markets that resolve every 5 minutes."
+---
+
+5-minute markets are fast-paced prediction rounds on crypto and stock prices. A new round starts every 5 minutes, and each one resolves automatically using on-chain price feeds.
+
+## How they work
+
+Each round asks a simple question:
+
+> "Will [Asset] go **Up** or **Down** in the next 5 minutes?"
+
+- **Up** means the price at the end of the window is higher than the price at the start
+- **Down** means the price is lower or equal
+
+## Lifecycle
+
+```
+Round opens → Trading window (5 min) → Price snapshot → Resolution
+```
+
+1. **Round opens** — A new market is created with a start price from the oracle
+2. **Trading window** — Buy Yes (Up) or No (Down) shares while the round is active
+3. **Price snapshot** — At the end of the window, the oracle records the closing price
+4. **Resolution** — The market resolves instantly. Up shares pay out if the price went up, Down shares pay out if it went down.
+
+## Resolution oracles
+
+5-minute markets use trusted, tamper-resistant price feeds for resolution:
+
+| Asset | Oracle |
+|-------|--------|
+| BTC, ETH, SOL, XRP | Chainlink on-chain price feeds |
+| Equities (AAPL, NVDA, etc.) | Yahoo Finance (during market hours) |
+
+<Warning>
+5-minute markets are high-frequency and volatile. Prices can swing significantly within a single round. Only trade what you're comfortable losing.
+</Warning>
+
+## Live rounds
+
+The Predict page shows currently active rounds with a countdown timer. You can see:
+
+- **Current price** vs. the round's opening price
+- **Time remaining** in the current window
+- **Yes/No odds** updating in real time
+
+Rounds that have ended appear in the "Recently Resolved" section with their outcomes.

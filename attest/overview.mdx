@@ -1,0 +1,65 @@
+---
+title: "Attest"
+description: "Permissionless, crowdfunded prediction markets created by anyone."
+---
+
+Attest is Noma's core differentiator — a fully permissionless system for creating prediction markets. Anyone can propose a question, the community funds it with real capital, and once the funding threshold is met, the market goes live for trading. No applications, no approvals, no gatekeepers.
+
+**This is what sets Noma apart.** While other platforms curate a limited set of markets behind closed doors, Noma lets the community decide what's worth trading on. If you have a question the world should be pricing, you can make it happen — in minutes, not weeks.
+
+## Why Attest?
+
+Centralized prediction markets curate a limited set of ~500 markets. If you want to trade on a question that doesn't exist yet — say, "Will AAPL hit $250 before Q3 earnings?" — you're out of luck.
+
+Attest changes that. You propose the question, the crowd funds it, and the market launches permissionlessly on an automated market maker (AMM). Creators and early backers earn fee-share rewards from the trading activity their market generates.
+
+## How it works
+
+<Steps>
+  <Step title="Propose">
+    Create a structured claim — a yes/no question with clear resolution criteria and a deadline. Example: "ETH above $5,000 by December 31, 2026."
+  </Step>
+  <Step title="Fund">
+    The community backs the market with USDC. Backers choose a side (Yes, No, or Neutral) and earn fee-share rewards when the market goes live.
+  </Step>
+  <Step title="Trade">
+    Once the funding threshold is hit, the market launches with an AMM (Automated Market Maker). Anyone can trade Yes/No shares.
+  </Step>
+  <Step title="Resolve">
+    At the deadline, the market resolves. Auto-resolvable markets (price feeds) settle instantly. Others use UMA's optimistic oracle for decentralized resolution.
+  </Step>
+</Steps>
+
+## Market categories
+
+Attest supports structured question types:
+
+| Type | Example |
+|------|---------|
+| **Price threshold** | "BTC above $100,000 by June 1?" |
+| **Up/Down** | "Will ETH go up or down this week?" |
+| **Range** | "AAPL between $180–$200 at earnings?" |
+| **Event** | "Will the Fed cut rates in Q2?" |
+
+## Resolution
+
+Markets resolve through one of three mechanisms depending on the question type:
+
+1. **Auto-resolution** — Price feed markets resolve automatically using Chainlink oracles
+2. **Source-verified** — Markets with clear, verifiable data sources (e.g., earnings reports)
+3. **UMA Oracle** — Subjective or complex questions use [UMA's optimistic oracle](https://docs.uma.xyz/protocol-overview/how-does-umas-oracle-work) for decentralized resolution
+
+<CardGroup cols={2}>
+  <Card title="Why community markets matter" icon="users" href="/attest/community-markets">
+    How permissionless creation changes the game.
+  </Card>
+  <Card title="Use cases & examples" icon="lightbulb" href="/attest/use-cases">
+    Real-world examples of community-created markets.
+  </Card>
+  <Card title="Create a market" icon="plus" href="/attest/creating-a-market">
+    Step-by-step guide to proposing a market.
+  </Card>
+  <Card title="Resolution" icon="scale-balanced" href="/attest/resolution">
+    How markets are resolved and winners are paid.
+  </Card>
+</CardGroup>
