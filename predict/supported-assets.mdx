@@ -1,41 +1,56 @@
 ---
 title: "Supported Assets"
-description: "Assets available for prediction markets on noma."
+description: "Crypto, stocks, commodities, and more — every asset you can trade on noma."
 ---
 
-noma supports prediction markets across multiple asset classes. Markets are sourced from Polymarket and other providers.
+Noma supports prediction markets across multiple asset classes. Markets are sourced from Polymarket, Kalshi, and other connected providers. If a market exists on any provider — it's tradeable on noma.
 
 ## Crypto
 
-| Asset | Ticker | Description |
-|-------|--------|-------------|
-| Bitcoin | BTC | The largest cryptocurrency by market cap |
-| Ethereum | ETH | The leading smart contract platform |
-| Solana | SOL | High-performance L1 blockchain |
-| XRP | XRP | Cross-border payment network |
+| Asset | Ticker | Market types | Providers |
+|-------|--------|-------------|-----------|
+| Bitcoin | BTC | Price threshold, Up/Down (5-min, 15-min), End-of-Day | Polymarket |
+| Ethereum | ETH | Price threshold, Up/Down (5-min, 15-min), End-of-Day | Polymarket |
+| Solana | SOL | Price threshold, Up/Down (5-min) | Polymarket |
+| XRP | XRP | Price threshold, Up/Down (5-min) | Polymarket |
 
-## Equities
+Crypto markets run 24/7. 5-minute rounds resolve automatically via Chainlink on-chain price feeds — a new round starts every 5 minutes with no downtime.
 
-| Asset | Ticker | Description |
-|-------|--------|-------------|
-| Apple | AAPL | Consumer electronics and services |
-| NVIDIA | NVDA | GPU and AI chip manufacturer |
-| Microsoft | MSFT | Enterprise software and cloud |
-| Google | GOOGL | Search, advertising, and cloud |
-| Amazon | AMZN | E-commerce and cloud (AWS) |
-| Tesla | TSLA | Electric vehicles and energy |
-| Meta | META | Social media and VR/AR |
+## Equities (Mag 7)
+
+| Asset | Ticker | Market types | Providers |
+|-------|--------|-------------|-----------|
+| Apple | AAPL | Price threshold, Up/Down, End-of-Day | Polymarket, Kalshi |
+| NVIDIA | NVDA | Price threshold, Up/Down, End-of-Day | Polymarket, Kalshi |
+| Microsoft | MSFT | Price threshold, Up/Down | Polymarket, Kalshi |
+| Google | GOOGL | Price threshold, Up/Down | Polymarket, Kalshi |
+| Amazon | AMZN | Price threshold, Up/Down | Polymarket, Kalshi |
+| Tesla | TSLA | Price threshold, Up/Down | Polymarket, Kalshi |
+| Meta | META | Price threshold, Up/Down | Polymarket, Kalshi |
+
+Equity markets are available during US market hours. When the same stock market exists on both Polymarket and Kalshi, noma compares orderbooks and routes to the best price — see [Best Execution](/predict/best-execution).
 
 ## Commodities
 
-| Asset | Ticker | Description |
-|-------|--------|-------------|
-| Gold | GOLD | Precious metal, safe-haven asset |
-| Silver | SILVER | Precious metal, industrial use |
+| Asset | Ticker | Market types | Providers |
+|-------|--------|-------------|-----------|
+| Gold | GOLD | Price threshold, End-of-Day | Polymarket |
+| Silver | SILVER | Price threshold | Polymarket |
+
+## Events & Politics
+
+Beyond asset prices, noma surfaces event-based markets from both providers:
+
+- **Politics** — Elections, policy decisions, government actions
+- **Fed & macro** — Rate decisions, inflation, economic indicators
+- **Sports** — Game outcomes, player props, tournament results
+- **Tech** — Product launches, earnings, company milestones
+
+Event markets are sourced from both Polymarket and Kalshi. Kalshi is CFTC-regulated and covers hundreds of event contracts. Polymarket is the largest on-chain prediction market, with billions in cumulative trading volume ([source](https://polymarket.com)).
 
 ## Price data sources
 
-Strike prices and resolution use trusted data feeds:
+Strike prices and resolution use trusted, tamper-resistant data feeds:
 
 | Asset Class | Primary Source | Fallback |
 |-------------|---------------|----------|
@@ -43,6 +58,17 @@ Strike prices and resolution use trusted data feeds:
 | Equities | Yahoo Finance | — |
 | Commodities | Yahoo Finance | — |
 
+Chainlink price feeds secure billions in value across DeFi and are the industry standard for on-chain price data ([source](https://chain.link)).
+
 <Note>
 New assets are added regularly based on community demand and data feed availability. Have a request? Let us know on [Discord](https://discord.gg).
 </Note>
+
+<CardGroup cols={2}>
+  <Card title="Start trading" icon="rocket" href="/quickstart">
+    Place your first prediction in under a minute.
+  </Card>
+  <Card title="Browse live markets" icon="chart-line" href="/predict/overview">
+    See all available markets across every provider.
+  </Card>
+</CardGroup>

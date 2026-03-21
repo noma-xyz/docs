@@ -1,58 +1,64 @@
 ---
 title: "Quickstart"
-description: "Go from zero to your first prediction in under a minute."
+description: "Sign in, deposit, and trade — in under a minute."
 ---
+
+Four steps to your first prediction. Every one after that builds your public track record.
 
 ## 1. Sign in
 
-Click **Sign In** in the top right corner. Noma supports multiple sign-in methods via [Privy](https://privy.io):
+Click **Sign In** in the top right corner. Pick whichever method is easiest for you:
 
-- **Wallet** — Connect MetaMask, Phantom, Coinbase Wallet, or any WalletConnect-compatible wallet
-- **Email** — Sign in with your email address
-- **Twitter** — Sign in with your X/Twitter account
-- **Discord** — Sign in with your Discord account
+- **Wallet** — MetaMask, Phantom, Coinbase Wallet, or any WalletConnect-compatible wallet
+- **Email** — Just your email address
+- **Twitter** — Your X/Twitter account
+- **Discord** — Your Discord account
 
-When you sign in, Noma automatically creates a secure **embedded wallet** for you using Privy. This wallet is non-custodial — only you control the keys. No seed phrases to write down; your wallet is tied to your login method and secured by Privy's infrastructure.
+Noma automatically creates a secure, non-custodial wallet for you — no seed phrases, no browser extensions, no friction.
 
 ## 2. Set up your trading account
 
-After signing in, Noma automatically sets up a **Polymarket trading account** for you. This includes:
+Noma handles this automatically. You'll see a few pop-up prompts asking you to approve — just click **Sign** each time. The whole process takes about 30 seconds, costs you nothing, and you only do it once.
 
-- **Deploying a Trading Safe** — A smart contract wallet (Gnosis Safe) on Polygon that holds your trading funds
-- **Setting token approvals** — Permissions for the prediction market contracts to execute trades
-- **Generating trading credentials** — Encrypted API keys for order placement
-
-This process is **completely free** (Noma covers all gas fees), **automatic**, and takes about 30 seconds. You'll be prompted to sign 2–3 messages to authorize the setup — no transaction fees involved.
-
-<Tip>You only need to do this once. After setup, your trading account is ready for all future sessions.</Tip>
+<Tip>Curious what's happening behind the scenes? See [Wallet Setup](/wallet/setup) for the technical details.</Tip>
 
 ## 3. Deposit funds
 
 Click the **+** button in the header to open the deposit modal.
 
-- **Polygon (USDC.e)** — For trading on Polymarket-powered markets. Funds go to your Trading Safe.
-- **Solana (SOL)** — For Solana-based markets and future Kalshi integration.
+Most markets run on **Polygon** — deposit **USDC.e** to get started. You can deposit via QR code, direct wallet transfer, or buy crypto with a card through the built-in MoonPay on-ramp.
 
-You can deposit via QR code, direct transfer, or the built-in on-ramp to buy crypto with a card via MoonPay.
+<Note>
+Some Kalshi markets use Solana (USDC) instead. You don't need to worry about this upfront — noma will tell you if a market requires a different chain. See [Deposits](/wallet/deposits) for details on both networks.
+</Note>
 
-## 4. Place a prediction
+## 4. Place your first prediction
 
 1. Browse markets on the **Predict** page — filter by asset (BTC, ETH, AAPL, Gold, etc.)
-2. Select a market (e.g., "Bitcoin above $90,000 by March 15?")
+2. Pick a market (e.g., "Bitcoin above \$90,000 by March 15?")
 3. Choose **Yes** or **No**
-4. Enter your stake amount
-5. Confirm the trade
+4. Enter your stake
+5. Confirm
 
-Your position appears immediately in your portfolio. If your prediction is correct when the market resolves, you receive $1.00 per share.
+Your position appears immediately in your portfolio. If your prediction is correct when the market resolves, you receive \$1.00 per share. No fees taken.
 
-## 5. Earn rewards
+## Now build your identity
 
-Head to the **Rewards** page to:
-- Complete your daily check-in for bonus points
-- Build prediction streaks for increasing rewards
-- Link your socials (Twitter, Discord, Email) for +150 points each
-- Refer friends for 500 points per signup
+You just placed your first prediction — and it's already part of your permanent, public track record on noma. Your Noma ID is recording it. The leaderboard sees you. Now keep going.
 
-<Card title="Learn about rewards" icon="trophy" href="/rewards/overview">
-  See how multipliers and volume tiers work.
-</Card>
+You'll earn more and climb faster if you set up your identity now:
+
+- **Claim your Noma ID** — Your public identity at `noma.xyz/id`. Instant +500 points and a permanent +0.05x multiplier on everything you earn.
+- **Daily check-in** — Visit the Rewards page each day to claim bonus points. Your streak grows the longer you keep it going.
+- **Keep predicting** — Make at least one prediction daily to build your streak. At 30+ days, you're earning 50 pts/day — 1,500 points per month from streaks alone.
+
+See the [full rewards guide](/rewards/overview) for referrals, social linking, multiplier tiers, and more.
+
+<CardGroup cols={2}>
+  <Card title="Claim your Noma ID" icon="id-card" href="/social/noma-id">
+    Your public prediction identity — badges, track record, and a permanent reward boost.
+  </Card>
+  <Card title="See how rewards work" icon="trophy" href="/rewards/overview">
+    Points, multipliers, streaks, and what they unlock.
+  </Card>
+</CardGroup>

@@ -1,54 +1,82 @@
 ---
 title: "FAQ"
-description: "Frequently asked questions about Noma."
+description: "Common questions about noma — fees, KYC, safety, and how it works."
 ---
 
 <AccordionGroup>
   <Accordion title="What is Noma?">
-    Noma is a prediction market aggregator that brings together markets from Polymarket, Kalshi, and other providers into a single interface. You can trade on asset prices, create your own markets, earn rewards, and compete with friends — all with zero trading fees.
+    Noma is a prediction market platform that brings together markets from Polymarket, Kalshi, and other providers into a single interface. You get zero trading fees, gasless execution, best-price routing across venues, and a public identity that tracks your predictions. See [Why Noma?](/why-noma) for the full picture.
+  </Accordion>
+
+  <Accordion title="How is noma different from Polymarket or Kalshi?">
+    Polymarket and Kalshi are individual prediction market platforms. Noma aggregates both (and more) into one interface — so you see every market, get the best price across venues, and never pay trading fees or gas. On top of that, noma adds a social and identity layer (Pulses, leaderboards, Noma ID, Funds) that doesn't exist on any single platform. See the [comparison table](/why-noma#every-market-best-price-zero-fees).
   </Accordion>
 
   <Accordion title="How do prediction markets work?">
-    Prediction markets let you buy Yes or No shares on future events. Share prices range from $0.01 to $0.99 and reflect the market's implied probability. When a market resolves, winning shares pay out $1.00 and losing shares pay $0.00. See [How Prediction Markets Work](/how-prediction-markets-work) for a detailed explanation.
+    Prediction markets let you buy Yes or No shares on future events. Share prices range from \$0.01 to \$0.99 and reflect the market's implied probability — a \$0.65 Yes share means the market implies a 65% chance. When a market resolves, winning shares pay out \$1.00 and losing shares pay \$0.00. See [How Prediction Markets Work](/how-prediction-markets-work) for a detailed explanation.
   </Accordion>
 
   <Accordion title="What assets can I trade on?">
-    Noma supports prediction markets on crypto (BTC, ETH, SOL, XRP), equities (AAPL, NVDA, MSFT, GOOGL, AMZN, TSLA, META), and commodities (Gold, Silver). New assets are added regularly. See [Supported Assets](/predict/supported-assets) for the full list.
+    Crypto (BTC, ETH, SOL, XRP), equities (AAPL, NVDA, MSFT, GOOGL, AMZN, TSLA, META), and commodities (Gold, Silver). New assets are added regularly based on community demand. See [Supported Assets](/predict/supported-assets) for the full list.
+  </Accordion>
+
+  <Accordion title="Are there any fees?">
+    Noma charges zero trading fees on every trade, on every venue. Gas fees on Polygon are also covered by noma — you never need to hold MATIC. You only pay the bid-ask spread set by the market. Note that some providers charge their own taker fees on select market types (e.g., Polymarket charges taker fees on certain crypto and sports markets) — these are provider fees, not noma fees.
+  </Accordion>
+
+  <Accordion title="What is gasless trading?">
+    Noma covers all gas fees on Polygon. When you place a trade, you sign a message and noma's relayer submits the transaction on-chain and pays the gas. This applies to trading, order cancellation, wallet setup, and payout redemption. You only need USDC.e to trade — nothing else. See [Wallet Setup](/wallet/setup) for details.
   </Accordion>
 
   <Accordion title="How do I sign in?">
-    Click Sign In and choose from wallet (MetaMask, Phantom, etc.), email, Twitter, or Discord. Noma uses Privy to create a secure embedded wallet for you automatically — no seed phrases or extensions needed.
+    Click Sign In and choose from wallet (MetaMask, Phantom, etc.), email, Twitter, or Discord. Noma creates a secure, non-custodial wallet for you automatically — no seed phrases, no browser extensions, no friction.
   </Accordion>
 
   <Accordion title="How do I deposit funds?">
-    Click the + button in the header. For Polymarket markets, deposit USDC.e to your Trading Safe on Polygon. For Solana markets, deposit SOL to your Solana wallet. You can also buy crypto directly with a card via the built-in MoonPay on-ramp. See [Deposits](/wallet/deposits) for details.
+    Click the **+** button in the header. For Polymarket markets, deposit USDC.e to your Trading Safe on Polygon. For Kalshi markets, deposit USDC on Solana. You can also buy crypto directly with a card via the built-in MoonPay on-ramp. See [Deposits](/wallet/deposits) for details.
   </Accordion>
 
-  <Accordion title="Are there any trading fees?">
-    No. Noma charges zero trading fees. You only pay the bid-ask spread set by the market. Gas fees on Polygon are also covered by Noma.
+  <Accordion title="What is a Noma ID?">
+    Your Noma ID is your unique identity on the platform — it replaces your wallet address on leaderboards, Pulses, Funds, and badges. Claiming one gives you a public profile at `noma.xyz/id`, a permanent +0.05x reward multiplier, and the Noma ID badge. See [Noma ID](/social/noma-id).
   </Accordion>
 
-  <Accordion title="How do rewards work?">
-    Earn points through daily check-ins, prediction streaks, referrals, linking socials, and claiming your Noma ID. Your trading volume unlocks multiplier tiers that boost all point earnings. See [Rewards](/rewards/overview) for the full breakdown.
+  <Accordion title="What are Pulses?">
+    Pulses are social groups where you and your friends pin markets, see each other's positions, and compete on a group leaderboard. Private Pulses are invite-only; public Pulses are open to anyone. See [Pulses](/social/pulses).
   </Accordion>
 
-  <Accordion title="What are Attestations?">
-    Attestations (Attest) let anyone create a prediction market. You propose a yes/no question, the community funds it with USDC, and once the funding threshold is hit, the market goes live for trading. See [Attest](/attest/overview) for details.
+  <Accordion title="What is Attest?">
+    Attest is noma's permissionless market creation system. Anyone can propose a yes/no question, the community funds it with USDC, and once the funding threshold is hit, the market goes live for trading. Creators and early backers earn fee-share rewards. See [Attest](/attest/overview).
   </Accordion>
 
   <Accordion title="How are markets resolved?">
-    Resolution depends on the platform. Polymarket markets use UMA's optimistic oracle or auto-resolution via price feeds. Kalshi markets are resolved by Kalshi using official data sources. Noma Attest markets use Chainlink oracles or UMA. See [Resolution](/attest/resolution) for details.
+    Resolution depends on the provider. Polymarket markets use UMA's optimistic oracle or auto-resolution via Chainlink price feeds. Kalshi markets are resolved by Kalshi using official data sources. Attest markets use Chainlink oracles or UMA. See [Resolution](/attest/resolution) for details.
   </Accordion>
 
   <Accordion title="What are Funds?">
-    Funds are permissionless prediction market pools where a manager trades on behalf of depositors. Anyone can create a Fund, and anyone can deposit. Funds are fully transparent — all trades are visible on-chain. See [Funds](/funds/overview) for details and risk disclosures.
+    Funds are permissionless prediction market pools where a manager trades on behalf of depositors. Use one solo to build a public, on-chain track record — or pool capital with friends. All trades are transparent. See [Funds](/funds/overview) for details and risk disclosures.
   </Accordion>
 
   <Accordion title="Is Noma custodial?">
-    No. Noma is non-custodial. Your embedded wallet keys are managed by Privy and never leave your device. Your Trading Safe is a smart contract you control. Noma cannot access or move your funds.
+    No. Noma is fully non-custodial. Your wallet keys are managed by Privy and never leave your device. Your Trading Safe is a smart contract only you control. Noma cannot access, move, or freeze your funds.
   </Accordion>
 
-  <Accordion title="What are keyboard shortcuts?">
-    Press **?** to open the keyboard shortcuts panel. Key shortcuts include **/** for search, **+** for deposit, and **Shift+key** for navigation between pages.
+  <Accordion title="Do I need KYC?">
+    Not for Polymarket markets — you can trade immediately after signing in. KYC (via Proof) is only required for Kalshi markets, because Kalshi is a CFTC-regulated exchange. Without KYC, you can still browse all markets from all providers — you just can't place orders on Kalshi-sourced markets. See [Providers](/predict/providers).
+  </Accordion>
+
+  <Accordion title="Is noma safe?">
+    Yes. Noma is fully non-custodial — your wallet keys are managed by Privy and never leave your device. Your trading funds sit in a Gnosis Safe smart contract that only you can authorize. Noma cannot access, move, or freeze your funds. All trades settle on-chain on Polygon and are verifiable on Polygonscan. See [Security](/resources/security) for details on the architecture.
+  </Accordion>
+
+  <Accordion title="How do I withdraw from noma?">
+    Withdrawals are handled directly from your Trading Safe (Polygon) or Solana wallet. You can withdraw your full balance at any time — noma never locks your funds. On Polygon, withdrawals are sent as USDC.e to any wallet address you specify.
+  </Accordion>
+
+  <Accordion title="What is a prediction market platform?">
+    A prediction market platform lets you trade on future events by buying Yes or No shares. Noma combines markets from multiple providers (like Polymarket and Kalshi) into a single interface — so instead of checking multiple apps and managing multiple wallets, you see every market in one place, compare prices across venues, and trade wherever the best price is. Noma also adds a social and identity layer on top.
+  </Accordion>
+
+  <Accordion title="Noma vs Polymarket — what's the difference?">
+    Polymarket is a single prediction market platform. Noma aggregates Polymarket, Kalshi, and other providers into one interface — so you see every market, get best-price routing across venues, and pay zero trading fees. Noma also adds features that don't exist on Polymarket: Noma ID (public identity), Pulses (social trading groups), Funds (managed prediction pools), leaderboards, badges, and reward multipliers. If you already trade on Polymarket, noma connects to the same orderbook — same markets, same liquidity — but adds an identity and social layer on top. See the full [comparison table](/why-noma#every-market-best-price-zero-fees).
   </Accordion>
 </AccordionGroup>

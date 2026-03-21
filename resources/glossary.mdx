@@ -1,35 +1,59 @@
 ---
 title: "Glossary"
-description: "Key terms and definitions used across Noma."
 ---
+
+## Trading
 
 | Term | Definition |
 |------|------------|
-| **AMM** | Automated Market Maker — a smart contract that provides liquidity and sets prices algorithmically |
-| **Attest** | Noma's permissionless market creation system where anyone can propose and fund a prediction market |
-| **Backer** | A user who contributes funds to an Attest market during its funding phase |
-| **Chainlink** | Decentralized oracle network used for on-chain price feeds and auto-resolution |
-| **CLOB** | Central Limit Order Book — the order matching engine used by Polymarket |
-| **Condition ID** | The unique on-chain identifier for a market's outcome condition |
-| **CTF** | Conditional Token Framework — the ERC-1155 token standard used by Polymarket for prediction shares |
-| **Embedded wallet** | A non-custodial wallet created automatically by Privy when you sign in |
-| **EOA** | Externally Owned Account — a standard Ethereum wallet controlled by a private key |
-| **Fund** | A permissionless pool where a manager trades on behalf of depositors |
-| **Gasless** | Transactions where Noma covers the gas fee — you only sign, never pay for execution |
-| **GTC** | Good-Til-Cancelled — an order that stays on the book until filled or manually cancelled |
-| **High-water mark** | The highest NAV a Fund has reached, used to calculate performance fees |
+| **Share** | A contract that pays \$1 if the outcome is correct, \$0 otherwise |
+| **Yes/No** | The two sides of a binary prediction market |
+| **Orderbook** | The list of open buy and sell orders at various prices |
+| **Spread** | The difference between the best bid and best ask price |
+| **Midpoint** | The average of the best bid and best ask price |
 | **Limit order** | An order to buy or sell at a specific price or better |
 | **Market order** | An order that fills immediately at the best available price |
-| **Midpoint** | The average of the best bid and best ask price |
-| **NAV** | Net Asset Value — the total value of a Fund's holdings |
-| **Noma ID** | Your unique identifier (NOMA-XXXX format) displayed on leaderboards and profiles |
-| **Orderbook** | The list of open buy and sell orders at various prices |
-| **Privy** | The wallet infrastructure provider that powers Noma's embedded wallets and authentication |
-| **Pulse** | A social board for curating markets and competing with friends |
+| **GTC** | Good-Til-Cancelled — an order that stays on the book until filled or manually cancelled |
 | **Resolution** | When a market's outcome is determined and shares are settled |
-| **Safe** | A Gnosis Safe smart contract wallet that holds your trading funds on Polygon |
-| **Share** | A contract that pays $1 if the outcome is correct, $0 otherwise |
-| **Spread** | The difference between the best bid and best ask price |
-| **Trading Safe** | Your Polygon smart contract wallet deployed by Noma for gasless, secure trading |
-| **UMA** | Universal Market Access — the decentralized oracle used for resolving disputed markets |
+| **Collection** | A group of related markets displayed on a single page — round-based (5-min), series (NBA), or single-event |
+
+## Platform
+
+| Term | Definition |
+|------|------------|
+| **Noma ID** | Your unique identity with a public profile at `noma.xyz/id`, displayed on leaderboards and profiles |
+| **Attest** | Noma's permissionless market creation system where anyone can propose and fund a prediction market |
+| **Backer** | A user who contributes funds to an Attest market during its funding phase |
+| **Fund** | A permissionless pool where a manager trades on behalf of depositors |
+| **Pulse** | A social board for curating markets and competing with friends |
+| **Matching Engine** | Noma's three-layer pipeline (structural, AI classification, embedding similarity + AI confirmation) for linking equivalent markets across providers |
+| **Market Link** | A verified connection between two markets on different providers representing the same bet |
+| **Gasless** | Transactions where noma covers the gas fee — you only sign, never pay for execution |
+
+## Infrastructure
+
+| Term | Definition |
+|------|------------|
+| **Embedded wallet** | A non-custodial wallet created automatically by Privy when you sign in |
+| **Trading Safe** | Your Polygon smart contract wallet (Gnosis Safe) deployed by noma for gasless, secure trading |
+| **EOA** | Externally Owned Account — a standard wallet controlled by a private key |
 | **USDC.e** | Bridged USDC on Polygon — the collateral token used for Polymarket trading |
+| **NAV** | Net Asset Value — the total value of a Fund's holdings |
+| **High-water mark** | The highest NAV a Fund has reached, used to calculate performance fees |
+
+## Providers
+
+| Term | Definition |
+|------|------------|
+| **Polymarket** | The largest decentralized prediction market, operating on Polygon |
+| **Kalshi** | CFTC-regulated event contracts exchange |
+| **DFlow** | On-chain protocol on Solana that brings Kalshi's orderbook on-chain |
+| **CTF** | Conditional Token Framework — the ERC-1155 token standard used by Polymarket for prediction shares |
+| **CLOB** | Central Limit Order Book — the order matching engine used by Polymarket |
+| **Chainlink** | Decentralized oracle network used for on-chain price feeds and auto-resolution |
+| **UMA** | Universal Market Access — the decentralized oracle used for resolving disputed markets |
+| **AMM** | Automated Market Maker — a smart contract that provides liquidity and sets prices algorithmically |
+
+<Card title="Still have questions?" icon="circle-question" href="/resources/faq">
+  Check the FAQ for answers to the most common questions about noma.
+</Card>

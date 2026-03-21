@@ -1,0 +1,133 @@
+---
+title: "Matching Engine"
+---
+
+When Polymarket lists "Bitcoin above \$95,000 by March 20?" and Kalshi lists the same question with different wording, noma needs to recognize they're the same bet. This is what the **matching engine** does — it links equivalent markets across providers so you see unified data, combined volume, and can trade on whichever venue offers the best price.
+
+## Why matching matters
+
+Without matching, you'd see the same market listed twice — once from each provider — with separate volume, separate orderbooks, and no way to compare. Matching lets noma:
+
+- **Merge market cards** — show one card with combined volume instead of duplicates
+- **Display multi-provider badges** — so you know a market is available on both Polymarket and Kalshi
+- **Enable best execution** — route orders to the venue with the best price
+- **Show accurate market counts** — "6 markets" instead of "4 + 5 with 3 duplicates"
+
+## The three-layer matching pipeline
+
+Noma uses a three-layer system. Each layer handles a different type of market, and they run in sequence (Layer 1 first, then Layer 2 and 3 in parallel):
+
+### Layer 1 — Structural matching
+
+**Speed:** Instant | **Confidence:** 100%
+
+For markets with structured data — a ticker symbol, strike price, direction, and end date — noma can match them deterministically. No AI needed.
+
+**How it works:** Noma joins markets across providers where:
+- Same **ticker** (e.g., BTC)
+- Same **strike price** (e.g., \$95,000)
+- Same **direction** (above/below)
+- **End date within 2 minutes** of each other
+
+The 2-minute tolerance exists because providers record slightly different settlement times — the actual difference between correctly matched pairs is typically under 1 minute.
+
+**Also matches:** Up/Down markets (5-minute rounds) using ticker + market type + end date + time bucket.
+
+**Result:** Auto-approved with 100% confidence. These are deterministic, exact matches.
+
+<Note>
+Layer 1 runs first every cycle because it catches the majority of matches for price-based markets. This removes obvious pairs before the AI layers need to run.
+</Note>
+
+### Layer 2 — AI classification
+
+**Speed:** Seconds | **Confidence:** 0–1.0 score
+
+For ticker-based markets that Layer 1 missed — same asset but different question structures — noma uses an **AI classifier** to determine whether two markets are the same bet.
+
+**How it works:**
+1. Find unmatched markets that share a **ticker** across providers
+2. Pre-filter to same market type and end dates within 7 days
+3. Build cross-provider pairs and classify them in batches
+4. The AI classifies each pair as `exact`, `equivalent`, `similar`, or `different`
+5. Returns a confidence score and reasoning for each pair
+
+**Example:** Polymarket might phrase it as "Will Bitcoin be above \$95k on March 20?" while Kalshi uses "Bitcoin price on March 20, 2026 (\$95,000 or above)". Different wording, same bet. Layer 1 would catch this if the structured fields match, but if the formatting differs slightly, Layer 2 picks it up.
+
+**Result:** Matches above the auto-approve threshold are approved automatically. Lower-confidence matches go to manual review.
+
+### Layer 3 — Embedding similarity + AI confirmation
+
+**Speed:** Slower | **Confidence:** 0–1.0 score
+
+For markets **without ticker symbols** — event-based markets like "Will the Fed cut rates?" or "Who will win the Super Bowl?" — there are no structured fields to match on. Layer 3 uses semantic similarity to find candidates, then confirms with AI.
+
+**How it works:**
+
+<Steps>
+  <Step title="Embed all market questions">
+    Every market question is converted into a high-dimensional vector (an embedding). These embeddings capture the semantic meaning of the question, not just keywords. Embeddings are cached and updated when questions change.
+  </Step>
+  <Step title="Find similar markets via cosine similarity">
+    For each unmatched market, noma computes cosine similarity against markets from other providers. The most similar candidates are shortlisted for AI review.
+  </Step>
+  <Step title="Confirm with AI">
+    The top candidates are sent to an AI classifier for final confirmation. The model sees both questions, descriptions, categories, and end dates, then determines if they're truly the same market or just superficially similar.
+  </Step>
+</Steps>
+
+#### How embeddings work
+
+An embedding is a list of numbers (a vector) that represents the meaning of a sentence. Two sentences with similar meaning will have vectors pointing in a similar direction — even if they use completely different words.
+
+**Example:** Consider these three market questions:
+
+| Question | Embedding (simplified to 3D) |
+|----------|------------------------------|
+| "Will the Fed cut interest rates in March?" | `[0.82, 0.41, 0.15]` |
+| "Federal Reserve rate reduction in March 2026?" | `[0.80, 0.43, 0.14]` |
+| "Will Bitcoin hit \$100K by March?" | `[0.12, 0.71, 0.63]` |
+
+The first two questions are about the same thing — a Fed rate cut — so their vectors are nearly identical (cosine similarity ~0.99). The third question is about something completely different, so its vector points in a different direction (cosine similarity ~0.35).
+
+In practice, embedding models produce 1024-dimensional vectors, but the principle is the same: **similar meaning = similar direction = high cosine similarity score**.
+
+**Why not just use embeddings?** Cosine similarity catches semantically similar questions, but it can produce false positives — "Will the Fed raise rates?" and "Will the Fed cut rates?" have high similarity but are opposite bets. Embeddings capture topic similarity, not logical negation. The AI confirmation step provides the critical second check — it understands that "raise" and "cut" are opposite actions, not just related words.
+
+**Result:** Matches are stored with both the cosine similarity score and the AI's confidence. High-confidence matches auto-approve; borderline cases go to review.
+
+## Match types
+
+| Type | Description | Example |
+|------|-------------|---------|
+| **Exact** | Identical bet, same terms | Same strike, same date, same direction |
+| **Equivalent** | Same underlying question, different wording | "BTC above \$95k" vs "Bitcoin ≥ \$95,000" |
+| **Similar** | Related but not identical | Same event, different time frame |
+| **Different** | Not the same market | Rejected by the classifier |
+
+## Approval flow
+
+| Confidence | Action |
+|------------|--------|
+| Above auto-approve threshold | Approved automatically |
+| Below threshold | Queued for manual review |
+| Classified as "different" | Rejected automatically |
+
+Layer 1 (structural) matches are always auto-approved at 100% confidence. Layer 2 and 3 matches depend on the configured threshold.
+
+## How matched markets appear
+
+Once two markets are linked:
+
+- The market card shows **provider badges** for each venue
+- **Volume is combined** across providers — you see the total liquidity, not just one side
+- The market detail page shows **orderbooks from both providers** when available
+- **Market count** reflects unique bets, not duplicates (e.g., 4 Polymarket + 5 Kalshi - 3 linked = 6 unique markets)
+
+<Warning>
+**Resolution criteria may differ between providers.** Even when two markets are linked as the same bet, each provider may have slightly different resolution rules, data sources, or edge-case handling. Always check the specific market description on the provider you're trading on to understand exactly how it resolves.
+</Warning>
+
+<Card title="See all providers" icon="building-columns" href="/predict/providers">
+  Polymarket, Kalshi, and more — how each provider works and what KYC unlocks.
+</Card>

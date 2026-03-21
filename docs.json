@@ -8,6 +8,7 @@
     "dark": "#00B8D4"
   },
   "favicon": "/favicon.svg",
+  "lastUpdated": true,
   "navigation": {
     "tabs": [
       {
@@ -27,41 +28,28 @@
             "pages": [
               "predict/overview",
               "predict/placing-a-trade",
-              "predict/supported-assets",
+              "predict/managing-orders",
+              "predict/portfolio",
               "predict/five-minute-markets"
             ]
           },
           {
-            "group": "Community & Attest",
+            "group": "How Noma Works",
             "pages": [
-              "attest/overview",
-              "attest/community-markets",
-              "attest/creating-a-market",
-              "attest/funding-and-backing",
-              "attest/use-cases",
-              "attest/resolution"
+              "predict/providers",
+              "predict/best-execution",
+              "predict/cross-provider-matching"
             ]
           },
           {
-            "group": "Features",
+            "group": "Identity & Rewards",
             "pages": [
-              "features/portfolio-tracking",
-              "features/gasless-trading",
-              "features/referral-program"
-            ]
-          },
-          {
-            "group": "Rewards",
-            "pages": [
+              "social/noma-id",
+              "social/leaderboards",
+              "social/badges",
+              "social/pulses",
               "rewards/overview",
               "rewards/multipliers"
-            ]
-          },
-          {
-            "group": "Wallet & Deposits",
-            "pages": [
-              "wallet/setup",
-              "wallet/deposits"
             ]
           },
           {
@@ -72,17 +60,30 @@
             ]
           },
           {
-            "group": "Social",
+            "group": "Attest",
             "pages": [
-              "social/pulses",
-              "social/leaderboards",
-              "social/badges"
+              "attest/overview",
+              "attest/creating-a-market",
+              "attest/funding-and-backing",
+              "attest/use-cases",
+              "attest/resolution"
+            ]
+          },
+          {
+            "group": "Wallet & Deposits",
+            "pages": [
+              "wallet/setup",
+              "wallet/deposits"
             ]
           },
           {
             "group": "Resources",
             "pages": [
               "resources/faq",
+              "resources/troubleshooting",
+              "account/settings",
+              "predict/supported-assets",
+              "predict/collections",
               "resources/glossary",
               "resources/security",
               "resources/roadmap"
