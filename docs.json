@@ -1,68 +1,103 @@
 {
   "$schema": "https://mintlify.com/docs.json",
   "theme": "mint",
-  "name": "Mint Starter Kit",
+  "name": "Noma",
   "colors": {
-    "primary": "#16A34A",
-    "light": "#07C983",
-    "dark": "#15803D"
+    "primary": "#00E5FF",
+    "light": "#00E5FF",
+    "dark": "#00B8D4"
   },
   "favicon": "/favicon.svg",
+  "lastUpdated": true,
   "navigation": {
     "tabs": [
       {
         "tab": "Guides",
         "groups": [
           {
-            "group": "Getting started",
+            "group": "Getting Started",
             "pages": [
               "index",
               "quickstart",
-              "development"
+              "why-noma",
+              "how-prediction-markets-work"
             ]
           },
           {
-            "group": "Customization",
+            "group": "Predict",
             "pages": [
-              "essentials/settings",
-              "essentials/navigation"
+              "predict/overview",
+              "predict/placing-a-trade",
+              "predict/managing-orders",
+              "predict/portfolio",
+              "predict/five-minute-markets"
             ]
           },
           {
-            "group": "Writing content",
+            "group": "How Noma Works",
             "pages": [
-              "essentials/markdown",
-              "essentials/code",
-              "essentials/images",
-              "essentials/reusable-snippets"
+              "predict/providers",
+              "predict/best-execution",
+              "predict/cross-provider-matching"
             ]
           },
           {
-            "group": "AI tools",
+            "group": "Identity & Rewards",
             "pages": [
-              "ai-tools/cursor",
-              "ai-tools/claude-code",
-              "ai-tools/windsurf"
+              "social/noma-id",
+              "social/leaderboards",
+              "social/badges",
+              "social/pulses",
+              "rewards/overview",
+              "rewards/multipliers"
+            ]
+          },
+          {
+            "group": "Funds",
+            "pages": [
+              "funds/overview",
+              "funds/becoming-a-manager"
+            ]
+          },
+          {
+            "group": "Attest",
+            "pages": [
+              "attest/overview",
+              "attest/creating-a-market",
+              "attest/funding-and-backing",
+              "attest/use-cases",
+              "attest/resolution"
+            ]
+          },
+          {
+            "group": "Wallet & Deposits",
+            "pages": [
+              "wallet/setup",
+              "wallet/deposits"
+            ]
+          },
+          {
+            "group": "Resources",
+            "pages": [
+              "resources/faq",
+              "resources/troubleshooting",
+              "account/settings",
+              "predict/supported-assets",
+              "predict/collections",
+              "resources/glossary",
+              "resources/security",
+              "resources/roadmap"
             ]
           }
         ]
       },
       {
-        "tab": "API reference",
+        "tab": "API Reference",
         "groups": [
           {
-            "group": "API documentation",
+            "group": "API Documentation",
             "pages": [
               "api-reference/introduction"
-            ]
-          },
-          {
-            "group": "Endpoint examples",
-            "pages": [
-              "api-reference/endpoint/get",
-              "api-reference/endpoint/create",
-              "api-reference/endpoint/delete",
-              "api-reference/endpoint/webhook"
             ]
           }
         ]
@@ -71,14 +106,14 @@
     "global": {
       "anchors": [
         {
-          "anchor": "Documentation",
-          "href": "https://mintlify.com/docs",
-          "icon": "book-open-cover"
+          "anchor": "App",
+          "href": "https://noma.xyz",
+          "icon": "arrow-up-right-from-square"
         },
         {
-          "anchor": "Blog",
-          "href": "https://mintlify.com/blog",
-          "icon": "newspaper"
+          "anchor": "Community",
+          "href": "https://discord.gg",
+          "icon": "discord"
         }
       ]
     }
@@ -90,33 +125,16 @@
   "navbar": {
     "links": [
       {
-        "label": "Support",
-        "href": "mailto:hi@mintlify.com"
+        "label": "App",
+        "href": "https://noma.xyz"
       }
-    ],
-    "primary": {
-      "type": "button",
-      "label": "Dashboard",
-      "href": "https://dashboard.mintlify.com"
-    }
-  },
-  "contextual": {
-    "options": [
-     "copy",
-     "view",
-     "chatgpt",
-     "claude",
-     "perplexity",
-     "mcp",
-     "cursor",
-     "vscode"
-   ]
+    ]
   },
   "footer": {
     "socials": {
-      "x": "https://x.com/mintlify",
-      "github": "https://github.com/mintlify",
-      "linkedin": "https://linkedin.com/company/mintlify"
+      "x": "https://x.com",
+      "discord": "https://discord.gg",
+      "github": "https://github.com"
     }
   }
 }

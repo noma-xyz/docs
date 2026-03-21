@@ -1,0 +1,68 @@
+---
+title: "Managing Orders"
+---
+
+## Open orders
+
+After placing a limit order (GTC or GTD), it sits on the orderbook until filled, cancelled, or expired. You can view all your open orders from the market's trading panel.
+
+### Viewing open orders
+
+Open orders are shown in the trading panel below the order form. Each entry shows:
+
+| Field | Description |
+|-------|-------------|
+| **Side** | Buy or Sell |
+| **Price** | The limit price you set |
+| **Size** | Number of shares |
+| **Filled** | How much of the order has been filled so far |
+| **Type** | GTC (Good-Til-Cancelled) or GTD (Good-Til-Date) |
+
+## Cancelling orders
+
+To cancel an open order:
+
+1. Open the market where you have an active order
+2. Find the order in your open orders list
+3. Click **Cancel**
+
+Cancellation is gasless and takes effect immediately. Any unfilled portion of the order is returned to your available balance.
+
+<Note>
+Market orders fill instantly and cannot be cancelled — only limit orders (GTC/GTD) can be cancelled.
+</Note>
+
+## Partial fills
+
+Limit orders can be partially filled. When this happens:
+
+- The **filled** portion executes as a trade and shows up in your portfolio
+- The **remaining** portion stays on the orderbook as an open order
+- You can cancel the remaining portion at any time without affecting the filled portion
+
+## Order history
+
+Your recent trades and order activity are visible in the market's **Activity** tab. This shows:
+
+- Filled orders with execution price and timestamp
+- Cancelled orders
+- Your trade history for that specific market
+
+## Tips
+
+<Tip>
+**Use GTC for conviction plays.** If you believe a market is mispriced, set a GTC limit order at your target price and let it sit. You'll get filled when the market moves to you — no need to watch it constantly.
+</Tip>
+
+<Tip>
+**Use GTD for time-sensitive bets.** If your thesis depends on something happening before a specific date, GTD orders auto-expire so you don't forget to cancel.
+</Tip>
+
+<CardGroup cols={2}>
+  <Card title="View your portfolio" icon="wallet" href="/predict/portfolio">
+    See all your positions across every provider in one place.
+  </Card>
+  <Card title="Place a trade" icon="arrow-right" href="/predict/placing-a-trade">
+    How to buy and sell shares — market orders, limit orders, and more.
+  </Card>
+</CardGroup>

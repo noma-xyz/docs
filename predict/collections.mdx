@@ -1,0 +1,64 @@
+---
+title: "Collections"
+---
+
+When you browse the Predict page, you'll notice that related markets are grouped together instead of listed individually. These groups are called **collections** — they give you a single page with a shared chart, timeline, and context for all the markets in a set.
+
+## Round-based collections
+
+These group short-duration markets (5-minute, 15-minute) for a specific asset — for example, all 5-minute BTC rounds.
+
+When you open a round-based collection, you'll see:
+
+- A **timeline selector** to navigate between rounds
+- **Live price chart** with the strike price overlay
+- **Countdown timer** for the current round
+- Automatic rotation to the next round when the current one ends
+
+<Tip>
+Round-based collections auto-advance. When a round expires, the page automatically loads the next active round so you're always looking at the current market.
+</Tip>
+
+## Series collections
+
+These group recurring events — NBA games, Fed meetings, earnings calls, or any market set that shares a common theme.
+
+You'll see:
+
+- An **event selector** to browse between events in the series
+- **Market selector** to switch between individual markets within an event
+- Standard chart and orderbook views
+
+## Single-event collections
+
+Some collections contain just one event with multiple markets. For example, an election event might have separate markets for each candidate. These show a market selector and a multi-probability chart.
+
+## Page layout
+
+Every collection page follows the same structure:
+
+1. **Header** — Asset/event name, category badge, provider badges
+2. **Selector** — Timeline (rounds) or event list (series)
+3. **Market selector** — Switch between markets within the selected event
+4. **Stats strip** — Volume, liquidity, time remaining
+5. **Chart** — Price or probability over time
+6. **Orderbook** — Live bids and asks
+7. **Activity feed** — Recent trades
+
+## Finding collections
+
+Collections appear throughout the Predict page:
+
+- **5-Minute Rounds** section at the top shows live round-based collections
+- **Trending** sections include popular collections
+- Browsing by asset category surfaces collections for that asset
+- Clicking "View collection" on any market takes you to its parent collection
+
+<CardGroup cols={2}>
+  <Card title="Try 5-minute markets" icon="clock" href="/predict/five-minute-markets">
+    The fastest round-based collections — pick a direction and see the result in minutes.
+  </Card>
+  <Card title="Browse all markets" icon="chart-line" href="/predict/overview">
+    See everything live on noma right now.
+  </Card>
+</CardGroup>

@@ -1,0 +1,65 @@
+---
+title: "Providers"
+description: "Polymarket, Kalshi, and more — where noma's markets come from."
+---
+
+Noma aggregates prediction markets from multiple providers into a single interface. You can browse every market regardless of provider, but where you can **trade** depends on your verification status.
+
+## Polymarket
+
+| | |
+|---|---|
+| **Type** | Decentralized prediction market |
+| **Chain** | Polygon PoS |
+| **Collateral** | USDC.e (bridged USDC) |
+| **Orderbook** | CLOB (Central Limit Order Book) |
+| **KYC** | Not required |
+
+Polymarket is the largest on-chain prediction market, with billions in cumulative trading volume and thousands of active markets ([source](https://polymarket.com)). It operates a hybrid CLOB system — orders are matched off-chain for speed, then settled on-chain for transparency. Noma connects directly to Polymarket's orderbook for real-time quotes and order execution.
+
+**No KYC is needed to trade on Polymarket.** When you sign into noma and set up your trading account, you're immediately able to trade any Polymarket-powered market.
+
+## Kalshi (via DFlow)
+
+| | |
+|---|---|
+| **Type** | CFTC-regulated event contracts |
+| **Chain** | Solana (via DFlow) |
+| **Collateral** | USDC |
+| **Orderbook** | On-chain via DFlow |
+| **KYC** | Required (Proof) |
+
+Kalshi is a US-regulated exchange for event contracts, supervised by the CFTC — covering politics, economics, sports, weather, and more with hundreds of active markets. Noma accesses Kalshi markets through **DFlow**, which brings Kalshi's orderbook on-chain via Solana.
+
+### Why KYC?
+
+Because Kalshi is a regulated US exchange, federal law requires identity verification before you can trade. **This is a Kalshi requirement, not a noma one** — Kalshi requires all users to complete KYC before they can place orders on its exchange. Noma uses **Proof** for privacy-preserving identity verification to satisfy this requirement.
+
+<Note>
+**KYC is completely optional.** If you skip verification, you can still browse and view all Kalshi markets, see their prices and orderbooks, and compare them with Polymarket. You just won't be able to place orders on Kalshi-sourced markets.
+</Note>
+
+### What you get with KYC
+
+- Trade on both Polymarket **and** Kalshi markets
+- Access Kalshi-exclusive markets not available on Polymarket
+- Better execution when the same market exists on both venues — noma can route your order to whichever has the better price
+
+### Without KYC
+
+- Trade on Polymarket markets only
+- Still see and browse all markets from all providers
+- View Kalshi orderbooks and prices for comparison
+- Cross-provider market data (combined volume, linked markets) is still visible
+
+## How providers appear in the UI
+
+When viewing a market, provider badges show where it's available:
+
+- Markets available on one provider show a single badge
+- Markets matched across providers show multiple badges (e.g., both Polymarket and Kalshi)
+- Combined volume from all providers is displayed on the market card
+
+<Card title="How the matching engine works" icon="link" href="/predict/cross-provider-matching">
+  How noma identifies the same market across Polymarket, Kalshi, and other providers — from structural matching to AI-powered semantic analysis.
+</Card>

@@ -1,0 +1,45 @@
+---
+title: "Security"
+description: "Non-custodial. On-chain. Your keys, your funds."
+---
+
+Noma is fully non-custodial. Your keys never leave your device, your funds sit in a smart contract only you control, and every trade settles on-chain where anyone can verify it.
+
+## Non-custodial architecture
+
+- **Embedded wallets** are created and managed by [Privy](https://privy.io). Private keys are generated on your device and never sent to noma's servers.
+- **Trading Safes** are Gnosis Safe smart contracts on Polygon. Only your embedded wallet can authorize transactions. Noma cannot access, move, or freeze your funds.
+- **Trading credentials** are encrypted at rest using AES-256-GCM before being stored on noma's backend.
+
+## Transaction security
+
+Every transaction on noma is:
+
+1. **Signed by you** — You approve each transaction with your wallet. Noma's relayer can only submit transactions you've explicitly authorized.
+2. **On-chain** — All trades execute on Polygon and are verifiable on [Polygonscan](https://polygonscan.com).
+3. **Gasless but secure** — Noma pays gas fees via a relayer, but the relayer cannot modify or redirect your signed transactions.
+
+## Data protection
+
+- Authentication is handled by Privy — wallet, email, Twitter, and Discord sign-in
+- Sessions use HttpOnly cookies with secure flags
+- No sensitive data is stored in local storage or exposed to client-side JavaScript
+
+## Smart contract dependencies
+
+Noma builds on battle-tested smart contracts that collectively secure billions in value across DeFi:
+
+| Contract | Description | Trust signal |
+|----------|-------------|-------------|
+| **Gnosis Safe** | Multi-sig wallet framework | Secures $100B+ in assets across DeFi ([source](https://safe.global)) |
+| **Polymarket CTF Exchange** | Conditional Token Framework for prediction market trading | Processes billions in prediction market volume |
+| **UMA Optimistic Oracle** | Decentralized dispute resolution for market outcomes | Secures $1B+ in value across protocols |
+| **USDC.e** | Circle's bridged USDC on Polygon | Backed 1:1 by Circle, the largest regulated stablecoin issuer |
+
+## Reporting vulnerabilities
+
+If you discover a security vulnerability, please report it responsibly via [Discord](https://discord.gg) or email. Do not disclose vulnerabilities publicly before they are addressed.
+
+<Card title="How your wallet works" icon="wallet" href="/wallet/setup">
+  Non-custodial wallets, gasless trading, and the two-wallet architecture behind every trade.
+</Card>

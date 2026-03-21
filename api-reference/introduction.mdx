@@ -1,33 +1,33 @@
 ---
-title: 'Introduction'
-description: 'Example section for showcasing API endpoints'
+title: "API Reference"
 ---
 
 <Note>
-  If you're not looking to build API reference documentation, you can delete
-  this section by removing the api-reference folder.
+The NomaAPI and SDK are currently in development. This section will be expanded as endpoints are finalized and made publicly available.
 </Note>
 
-## Welcome
+## Overview
 
-There are two ways to build API documentation: [OpenAPI](https://mintlify.com/docs/api-playground/openapi/setup) and [MDX components](https://mintlify.com/docs/api-playground/mdx/configuration). For the starter kit, we are using the following OpenAPI specification.
+noma uses [Connect RPC](https://connectrpc.com/) (protobuf over HTTP) for its API. This provides type-safe, high-performance communication with support for multiple languages.
 
-<Card
-  title="Plant Store Endpoints"
-  icon="leaf"
-  href="https://github.com/mintlify/starter/blob/main/api-reference/openapi.json"
->
-  View the OpenAPI specification file
-</Card>
+## Planned services
+
+| Service | Description | Status |
+|---------|-------------|--------|
+| **MarketService** | Browse events, markets, orderbooks, prices, and probability history | Coming soon |
+| **TradingService** | Place orders, manage positions, check balances | Coming soon |
+| **UserService** | Profiles, Noma IDs, badges, settings | Coming soon |
 
 ## Authentication
 
-All API endpoints are authenticated using Bearer tokens and picked up from the specification file.
+The API uses session-based authentication with HttpOnly cookies. Authenticated endpoints require a valid session obtained through the AuthService.
 
-```json
-"security": [
-  {
-    "bearerAuth": []
-  }
-]
-```
+## SDK
+
+Official SDKs will be available for:
+- **TypeScript/JavaScript** — For web and Node.js applications
+- **Python** — For data analysis, bots, and automation
+
+## Get notified
+
+Want early access to the API? Join our [Discord](https://discord.gg) and follow us on [X](https://x.com) for announcements.

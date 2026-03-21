@@ -1,0 +1,82 @@
+---
+title: "Troubleshooting"
+---
+
+<AccordionGroup>
+  <Accordion title="My deposit isn't showing up">
+    Deposits on Polygon typically confirm in under 30 seconds. If your balance hasn't updated:
+
+    1. **Check the right address** — Make sure you sent USDC.e to your **Trading Safe** address (shown in the deposit modal), not your embedded wallet address
+    2. **Check the right token** — You need **USDC.e** (bridged USDC, contract `0x2791Bca1f2de4661ED88A30C99A7a9449Aa84174`), not native USDC or other tokens
+    3. **Check the right network** — Deposits must be on **Polygon PoS**, not Ethereum mainnet or another chain
+    4. **Wait a moment** — Balance updates can take a few seconds after on-chain confirmation. Try refreshing the page
+
+    If you sent to the wrong address or token, noma cannot recover the funds.
+  </Accordion>
+
+  <Accordion title="My trade is stuck or pending">
+    Orders on noma are gasless and typically execute within seconds. If a trade seems stuck:
+
+    - **Market orders** should fill instantly. If they don't, the market may have insufficient liquidity at the current price. Try a smaller size or use a limit order.
+    - **Limit orders** sit on the orderbook until someone matches them. They're not stuck — they're waiting for the market to move to your price. You can cancel anytime.
+    - If the UI shows a spinning state, try refreshing the page. Your order status is on-chain and won't be affected.
+  </Accordion>
+
+  <Accordion title="Wallet setup failed or won't complete">
+    The one-time wallet setup requires 2–3 signature prompts. If it fails:
+
+    1. **Don't close the modal** — If you accidentally close it, re-open the app and it will prompt you to continue
+    2. **Sign all prompts** — Each signature is required. Rejecting one will stop the process
+    3. **Check your connection** — A stable internet connection is needed for the relayer to submit your transactions
+    4. **Try again** — If it fails, refresh the page and try the setup again. It's safe to retry — the system won't create duplicate wallets
+  </Accordion>
+
+  <Accordion title="I can't trade on a Kalshi market">
+    Kalshi markets require identity verification (KYC) because Kalshi is a CFTC-regulated exchange. Without KYC, you can view Kalshi markets but not place orders.
+
+    To unlock Kalshi trading, complete verification via **Proof** in your account settings. See [Providers](/predict/providers) for details.
+  </Accordion>
+
+  <Accordion title="Market resolved incorrectly">
+    Resolution depends on the provider:
+
+    - **Polymarket** — Uses UMA's optimistic oracle with a dispute period. If you believe a resolution is wrong, disputes can be raised during the challenge window.
+    - **Kalshi** — Resolved by Kalshi using official data sources. Contact Kalshi for resolution disputes.
+    - **5-minute markets** — Resolved automatically by on-chain price feeds (Chainlink). These are deterministic and cannot be disputed.
+
+    Noma displays resolution results as reported by each provider. See [Resolution](/attest/resolution) for more details.
+  </Accordion>
+
+  <Accordion title="My streak reset unexpectedly">
+    Prediction streaks require at least one prediction per day. Days are counted in UTC. If you placed a prediction late at night in your local timezone, it may have been counted for the next UTC day — causing a gap.
+
+    Check-in streaks work the same way. Visit the Rewards page daily and claim your check-in to maintain your streak.
+  </Accordion>
+
+  <Accordion title="I sent funds to the wrong address">
+    If you sent tokens to your embedded wallet address instead of your Trading Safe, or sent the wrong token type, noma cannot reverse or recover the transaction. All blockchain transactions are final.
+
+    Always double-check the address and token before sending. Your Trading Safe address is shown in the deposit modal.
+  </Accordion>
+
+  <Accordion title="The app is slow or not loading">
+    Try these steps:
+
+    1. **Refresh the page** — A simple refresh often fixes stale state
+    2. **Clear browser cache** — Cached data from older versions can cause issues
+    3. **Check your network** — noma requires a stable connection for real-time price updates
+    4. **Try a different browser** — Chrome and Firefox are recommended
+    5. **Disable extensions** — Some wallet extensions or ad blockers can interfere
+
+    If the issue persists, report it on [Discord](https://discord.gg) with details about your browser and what you were doing.
+  </Accordion>
+</AccordionGroup>
+
+<CardGroup cols={2}>
+  <Card title="FAQ" icon="circle-question" href="/resources/faq">
+    Quick answers to common questions about noma.
+  </Card>
+  <Card title="Join Discord" icon="discord" href="https://discord.gg">
+    Get help from the community and the noma team.
+  </Card>
+</CardGroup>

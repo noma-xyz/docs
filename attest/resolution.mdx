@@ -1,0 +1,48 @@
+---
+title: "Resolution"
+---
+
+## Resolution by platform
+
+Each market on Noma is sourced from a specific platform, and the resolution method is determined by that platform. Noma displays the resolution criteria as described by the respective provider.
+
+### Polymarket markets
+
+Polymarket markets resolve through one of these mechanisms:
+
+- **UMA Optimistic Oracle** — A resolver proposes an outcome, and there's a challenge period for disputes. If undisputed, the proposal is accepted. If disputed, [UMA's decentralized voter network](https://docs.uma.xyz/protocol-overview/how-does-umas-oracle-work) makes the final determination.
+- **Auto-resolution** — Price-based markets resolve automatically using on-chain oracle feeds (Chainlink for crypto).
+
+### Kalshi markets
+
+Kalshi markets are resolved by Kalshi as a CFTC-regulated exchange. Resolution follows the criteria specified in each contract's description, using official data sources (government reports, exchange data, verified news sources).
+
+### Noma Attest markets
+
+Markets created via Attest resolve based on the type of question:
+
+1. **Auto-resolution** — Price feed markets resolve automatically using Chainlink oracles
+2. **Source-verified** — Markets with clear, publicly verifiable data sources
+3. **UMA Oracle** — Subjective or complex questions use UMA's optimistic oracle
+
+## Payouts
+
+After resolution:
+
+- **Winning shares** pay out **\$1.00** per share
+- **Losing shares** pay out **\$0.00** — they are burned with no payout
+
+You don't need to take action on losing positions. They're worth zero and can be ignored.
+
+## Viewing resolution details
+
+Each market on Noma displays its resolution source and criteria in the market detail view. This information comes directly from the platform that hosts the market (Polymarket, Kalshi, etc.).
+
+## Disputes
+
+For Polymarket markets resolved via UMA:
+1. A resolver proposes an outcome
+2. Anyone can dispute by posting a bond during the challenge period
+3. If disputed, UMA's voter network makes the final determination
+
+Disputes are rare but the mechanism exists to protect market integrity.

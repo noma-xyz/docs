@@ -1,0 +1,77 @@
+---
+title: "Wallet Setup"
+---
+
+Noma creates a secure, non-custodial wallet for you automatically when you sign up. The entire setup takes about 30 seconds, costs you nothing, and you only do it once. No seed phrases, no browser extensions, no MATIC needed — just sign in and start trading.
+
+Below is how it works under the hood.
+
+## Wallet architecture
+
+Noma uses a two-wallet system for secure, gasless trading on Polygon:
+
+| Wallet | Purpose |
+|--------|---------|
+| **Embedded wallet (EOA)** | Your main wallet, created automatically when you sign up. Holds your keys. |
+| **Trading Safe** | A smart contract wallet (Gnosis Safe) deployed on Polygon. Holds your trading funds and executes trades. |
+
+The Safe is controlled by your embedded wallet — only you can authorize transactions.
+
+## First-time setup
+
+When you first deposit to Polygon or place a trade, noma walks you through a one-time setup:
+
+<Steps>
+  <Step title="Deploy Safe">
+    A Gnosis Safe contract is deployed on Polygon for your account. You'll sign a message to authorize the deployment. This is gasless — noma covers the transaction fees.
+  </Step>
+  <Step title="Set approvals">
+    The Safe needs permission to interact with the prediction market contracts (CTF Exchange). A batch of approval transactions is signed and relayed. Also gasless.
+  </Step>
+  <Step title="Generate trading credentials">
+    API credentials are derived for your wallet to authenticate with the order matching engine. You sign an EIP-712 message, and noma securely stores the encrypted credentials on the backend.
+  </Step>
+  <Step title="Save Safe address">
+    Your Safe address is linked to your noma profile. All future Polygon deposits go to this address.
+  </Step>
+</Steps>
+
+The entire process takes about 30 seconds and requires 2–3 signature prompts (no gas fees).
+
+## Gasless trading
+
+Noma covers all gas fees on Polygon, so you never need to hold MATIC or worry about transaction costs. You only need USDC.e to trade.
+
+**How it works:**
+
+1. You sign a transaction with your wallet (a simple signature, not a gas-consuming transaction)
+2. Noma's relayer submits the transaction on-chain and pays the gas fee
+3. The transaction executes on Polygon and your trade is placed
+
+This applies to wallet setup, placing and cancelling orders, and claiming payouts from resolved markets.
+
+## Supported chains
+
+| Chain | Token | What it's used for |
+|-------|-------|--------------------|
+| **Polygon PoS** | USDC.e (bridged USDC) | Polymarket-powered prediction markets. All trading, order placement, and settlement happens here. |
+| **Solana** | USDC | Kalshi markets via DFlow. Used for Kalshi-sourced markets (requires KYC). |
+
+Your Polygon Trading Safe and Solana wallet are separate — deposits on one chain don't appear on the other. See [Deposits](/wallet/deposits) for how to fund each.
+
+## Security
+
+- Your private keys **never leave your device** — noma uses Privy's embedded wallet infrastructure
+- Trading credentials are **encrypted at rest** (AES-256-GCM) on noma's backend
+- The Safe contract is **non-custodial** — only your EOA can authorize transactions
+- All relay transactions are **signed by you** before submission
+- Gasless doesn't mean trustless is compromised — the relayer can only submit transactions you've explicitly authorized
+
+<CardGroup cols={2}>
+  <Card title="Deposit funds" icon="plus" href="/wallet/deposits">
+    Add USDC.e on Polygon or USDC on Solana to start trading.
+  </Card>
+  <Card title="Security details" icon="shield" href="/resources/security">
+    How noma protects your funds — non-custodial wallets, encryption, and on-chain settlement.
+  </Card>
+</CardGroup>

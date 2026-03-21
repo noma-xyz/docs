@@ -1,0 +1,53 @@
+---
+title: "Creating a Market"
+---
+
+## Step-by-step
+
+### 1. Define your question
+
+Your question must be:
+- **Binary** — resolvable as Yes or No
+- **Specific** — include a clear target, asset, and deadline
+- **Verifiable** — the outcome must be objectively determinable
+
+<Note>
+**Good:** "Will Bitcoin be above \$100,000 on June 1, 2026?"
+
+**Bad:** "Will Bitcoin do well this year?" (too vague, not verifiable)
+</Note>
+
+### 2. Set resolution criteria
+
+Choose how the market will resolve:
+- **Price feed** — Automatically resolves using on-chain oracles (best for asset price questions)
+- **UMA Oracle** — Decentralized resolution for subjective or event-based questions
+
+### 3. Set a deadline
+
+Every market needs an end date. This is when resolution occurs and winning shares pay out.
+
+### 4. Submit for funding
+
+Once submitted, your market enters the **funding phase**. It needs to reach the funding threshold before it can go live.
+
+## Funding thresholds
+
+| Tier | Threshold | Best for |
+|------|-----------|----------|
+| Micro | \$500 | Niche or experimental questions |
+| Standard | \$1,000 | Most prediction markets |
+| Large | \$2,500+ | High-interest events |
+
+## What happens after funding?
+
+Once the threshold is met:
+1. An AMM (Automated Market Maker) is deployed with the funded liquidity
+2. The market appears on the Predict page for anyone to trade
+3. Early backers earn fee-share rewards from trading activity
+
+## Tips for successful markets
+
+- **Be specific** — Clear resolution criteria attract more backers
+- **Pick trending topics** — Markets on current events fund faster
+- **Set reasonable deadlines** — Too far out reduces urgency; too soon limits trading time

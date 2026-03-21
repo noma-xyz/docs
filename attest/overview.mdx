@@ -1,0 +1,76 @@
+---
+title: "Attest"
+description: "Create any prediction market. Earn fees from every trade it generates."
+---
+
+Don't see the market you want? Create it.
+
+Attest is noma's system for permissionless market creation. Propose any yes/no question, let the community fund it with real capital, and the market goes live for anyone to trade. No applications, no review boards, no gatekeepers. If the community wants it, it ships.
+
+Creators and early backers earn fee-share rewards from the trading activity their market generates. You're not just creating a market — you're building something that earns for you.
+
+## Why this matters
+
+On curated platforms, a small team decides which markets exist. Your question might never get listed. By the time a trending topic gets a market, the moment has passed. And there's no reward for the people who saw it coming.
+
+| | Noma (Attest) | Curated platforms |
+|---|---|---|
+| Market creation | **Permissionless** — anyone can propose | Submit a request and hope an editorial team picks it |
+| Time to market | **Minutes** (once funded) | Days to weeks — if it gets listed at all |
+| Market coverage | **Unlimited** — community-driven | Hundreds of hand-picked markets |
+| Creator incentives | **Fee share** for creators and backers | None — the platform keeps it all |
+| Funding model | **Crowdfunded** by the community | Platform-funded |
+
+## How it works
+
+<Steps>
+  <Step title="Propose">
+    Create a structured claim — a yes/no question with clear resolution criteria and a deadline. Example: "ETH above \$5,000 by December 31, 2026."
+  </Step>
+  <Step title="Fund">
+    The community backs the market with USDC. Backers choose a side (Yes, No, or Neutral) and earn fee-share rewards when the market goes live.
+  </Step>
+  <Step title="Trade">
+    Once the funding threshold is hit, the market launches with an AMM. Anyone can trade Yes/No shares — and every trade generates fees for creators and backers.
+  </Step>
+  <Step title="Resolve">
+    At the deadline, the market resolves. Price feed markets settle instantly via Chainlink. Others use UMA's optimistic oracle for decentralized resolution.
+  </Step>
+</Steps>
+
+## Market categories
+
+| Type | Example |
+|------|---------|
+| **Price threshold** | "BTC above \$100,000 by June 1?" |
+| **Up/Down** | "Will ETH go up or down this week?" |
+| **Range** | "AAPL between \$180–\$200 at earnings?" |
+| **Event** | "Will the Fed cut rates in Q2?" |
+
+## What makes a great market?
+
+- **Timely** — Tied to something happening right now
+- **Specific** — Clear resolution criteria, no ambiguity
+- **Opinionated** — People have strong views and want to back them
+- **Underserved** — The question doesn't exist anywhere else
+
+## Resolution
+
+1. **Auto-resolution** — Price feed markets resolve automatically using Chainlink oracles
+2. **Source-verified** — Markets with clear, verifiable data sources (e.g., earnings reports)
+3. **UMA Oracle** — Subjective or complex questions use [UMA's optimistic oracle](https://docs.uma.xyz/protocol-overview/how-does-umas-oracle-work) for decentralized resolution
+
+<CardGroup cols={2}>
+  <Card title="Create your first market" icon="plus" href="/attest/creating-a-market">
+    Propose a question and set resolution criteria — step by step.
+  </Card>
+  <Card title="See what others have created" icon="lightbulb" href="/attest/use-cases">
+    Real-world examples of community-created prediction markets.
+  </Card>
+  <Card title="Back a market and earn" icon="coins" href="/attest/funding-and-backing">
+    How crowdfunded market creation works and what backers earn in fee-share.
+  </Card>
+  <Card title="How markets resolve" icon="scale-balanced" href="/attest/resolution">
+    Chainlink, UMA, and source-verified resolution — how winners get paid.
+  </Card>
+</CardGroup>

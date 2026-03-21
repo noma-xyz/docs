@@ -1,80 +1,64 @@
 ---
 title: "Quickstart"
-description: "Start building awesome documentation in minutes"
+description: "Sign in, deposit, and trade — in under a minute."
 ---
 
-## Get started in three steps
+Four steps to your first prediction. Every one after that builds your public track record.
 
-Get your documentation site running locally and make your first customization.
+## 1. Sign in
 
-### Step 1: Set up your local environment
+Click **Sign In** in the top right corner. Pick whichever method is easiest for you:
 
-<AccordionGroup>
-  <Accordion icon="copy" title="Clone your docs locally">
-    During the onboarding process, you created a GitHub repository with your docs content if you didn't already have one. You can find a link to this repository in your [dashboard](https://dashboard.mintlify.com).
-    
-    To clone the repository locally so that you can make and preview changes to your docs, follow the [Cloning a repository](https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository) guide in the GitHub docs.
-  </Accordion>
-  <Accordion icon="rectangle-terminal" title="Start the preview server">
-    1. Install the Mintlify CLI: `npm i -g mint`
-    2. Navigate to your docs directory and run: `mint dev`
-    3. Open `http://localhost:3000` to see your docs live!
-    
-    <Tip>Your preview updates automatically as you edit files.</Tip>
-  </Accordion>
-</AccordionGroup>
+- **Wallet** — MetaMask, Phantom, Coinbase Wallet, or any WalletConnect-compatible wallet
+- **Email** — Just your email address
+- **Twitter** — Your X/Twitter account
+- **Discord** — Your Discord account
 
-### Step 2: Deploy your changes
+Noma automatically creates a secure, non-custodial wallet for you — no seed phrases, no browser extensions, no friction.
 
-<AccordionGroup>
-  <Accordion icon="github" title="Install our GitHub app">
-    Install the Mintlify GitHub app from your [dashboard](https://dashboard.mintlify.com/settings/organization/github-app).
-    
-    Our GitHub app automatically deploys your changes to your docs site, so you don't need to manage deployments yourself.
-</Accordion>
-<Accordion icon="palette" title="Update your site name and colors">
-    For a first change, let's update the name and colors of your docs site.
+## 2. Set up your trading account
 
-    1. Open `docs.json` in your editor.
-    2. Change the `"name"` field to your project name.
-    3. Update the `"colors"` to match your brand.
-    4. Save and see your changes instantly at `http://localhost:3000`.
+Noma handles this automatically. You'll see a few pop-up prompts asking you to approve — just click **Sign** each time. The whole process takes about 30 seconds, costs you nothing, and you only do it once.
 
-    <Tip>Try changing the primary color to see an immediate difference!</Tip>
-  </Accordion>
-</AccordionGroup>
+<Tip>Curious what's happening behind the scenes? See [Wallet Setup](/wallet/setup) for the technical details.</Tip>
 
-### Step 3: Go live
+## 3. Deposit funds
 
-<Accordion icon="rocket" title="Publish your docs">
-  1. Commit and push your changes.
-  2. Your docs will update and be live in moments!
-</Accordion>
+Click the **+** button in the header to open the deposit modal.
 
-## Next steps
-
-Now that you have your docs running, explore these key features:
-
-<CardGroup cols={2}>
-
-<Card title="Write Content" icon="pen-to-square" href="/essentials/markdown">
-  Learn MDX syntax and start writing your documentation.
-</Card>
-
-<Card title="Customize style" icon="palette" href="/essentials/settings">
-  Make your docs match your brand perfectly.
-</Card>
-
-<Card title="Add code examples" icon="square-code" href="/essentials/code">
-  Include syntax-highlighted code blocks.
-</Card>
-
-<Card title="API documentation" icon="code" href="/api-reference/introduction">
-  Auto-generate API docs from OpenAPI specs.
-</Card>
-
-</CardGroup>
+Most markets run on **Polygon** — deposit **USDC.e** to get started. You can deposit via QR code, direct wallet transfer, or buy crypto with a card through the built-in MoonPay on-ramp.
 
 <Note>
-  **Need help?** See our [full documentation](https://mintlify.com/docs) or join our [community](https://mintlify.com/community).
+Some Kalshi markets use Solana (USDC) instead. You don't need to worry about this upfront — noma will tell you if a market requires a different chain. See [Deposits](/wallet/deposits) for details on both networks.
 </Note>
+
+## 4. Place your first prediction
+
+1. Browse markets on the **Predict** page — filter by asset (BTC, ETH, AAPL, Gold, etc.)
+2. Pick a market (e.g., "Bitcoin above \$90,000 by March 15?")
+3. Choose **Yes** or **No**
+4. Enter your stake
+5. Confirm
+
+Your position appears immediately in your portfolio. If your prediction is correct when the market resolves, you receive \$1.00 per share. No fees taken.
+
+## Now build your identity
+
+You just placed your first prediction — and it's already part of your permanent, public track record on noma. Your Noma ID is recording it. The leaderboard sees you. Now keep going.
+
+You'll earn more and climb faster if you set up your identity now:
+
+- **Claim your Noma ID** — Your public identity at `noma.xyz/id`. Instant +500 points and a permanent +0.05x multiplier on everything you earn.
+- **Daily check-in** — Visit the Rewards page each day to claim bonus points. Your streak grows the longer you keep it going.
+- **Keep predicting** — Make at least one prediction daily to build your streak. At 30+ days, you're earning 50 pts/day — 1,500 points per month from streaks alone.
+
+See the [full rewards guide](/rewards/overview) for referrals, social linking, multiplier tiers, and more.
+
+<CardGroup cols={2}>
+  <Card title="Claim your Noma ID" icon="id-card" href="/social/noma-id">
+    Your public prediction identity — badges, track record, and a permanent reward boost.
+  </Card>
+  <Card title="See how rewards work" icon="trophy" href="/rewards/overview">
+    Points, multipliers, streaks, and what they unlock.
+  </Card>
+</CardGroup>
