@@ -1,7 +1,7 @@
 {
   "$schema": "https://mintlify.com/docs.json",
   "theme": "mint",
-  "name": "Noma",
+  "name": "noma",
   "colors": {
     "primary": "#00E5FF",
     "light": "#00E5FF",
@@ -62,11 +62,7 @@
           {
             "group": "Attest",
             "pages": [
-              "attest/overview",
-              "attest/creating-a-market",
-              "attest/funding-and-backing",
-              "attest/use-cases",
-              "attest/resolution"
+              "attest/overview"
             ]
           },
           {
