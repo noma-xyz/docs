@@ -55,8 +55,7 @@
           {
             "group": "Funds",
             "pages": [
-              "funds/overview",
-              "funds/becoming-a-manager"
+              "funds/overview"
             ]
           },
           {
