@@ -1,0 +1,37 @@
+---
+title: "Fees"
+description: "noma is free to use. Here's how fees work across providers."
+---
+
+# Fees
+
+noma charges nothing. No platform fee, no commission, no spread markup. When you trade through noma, every dollar goes toward your position.
+
+The providers that execute your trades — Polymarket and Kalshi — set their own fees. These are collected by the provider, not by noma.
+
+## What you pay
+
+| Provider | Fee model | Shown in price? |
+|----------|-----------|-----------------|
+| Polymarket | Probability-weighted taker fee, varies by market category | Deducted from shares received |
+| Kalshi (via DFlow) | Probability-weighted taker fee, based on builder tier | Included in execution price |
+
+Both providers use the same core idea: fees are highest when an outcome is near 50/50 and shrink as a market approaches certainty. Makers (limit orders that add liquidity) pay no fees on either provider.
+
+## Polymarket fees
+
+Polymarket charges taker fees that vary by market category — crypto, sports, politics, and others each have different rates. Fees are deducted in shares, not USDC. You pay the listed price, but receive slightly fewer shares.
+
+Geopolitical markets are fee-free.
+
+Full details: [Polymarket fee documentation](https://docs.polymarket.com/trading/fees)
+
+## Kalshi fees (via DFlow)
+
+Kalshi markets are accessed through DFlow's trading infrastructure. Fees are baked into the execution price — the price you see in your order summary is what you pay, fees included.
+
+Full details: [DFlow fee documentation](https://pond.dflow.net/build/prediction-markets/prediction-market-fees)
+
+## Deposits and withdrawals
+
+No fees. Depositing and withdrawing USDC is free on noma. Standard network gas fees may apply depending on the chain.

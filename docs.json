@@ -38,7 +38,15 @@
             "pages": [
               "predict/providers",
               "predict/best-execution",
-              "predict/cross-provider-matching"
+              "predict/cross-provider-matching",
+              "predict/fees"
+            ]
+          },
+          {
+            "group": "Wallet & Deposits",
+            "pages": [
+              "wallet/setup",
+              "wallet/deposits"
             ]
           },
           {
@@ -62,13 +70,6 @@
             "group": "Attest",
             "pages": [
               "attest/overview"
-            ]
-          },
-          {
-            "group": "Wallet & Deposits",
-            "pages": [
-              "wallet/setup",
-              "wallet/deposits"
             ]
           },
           {
