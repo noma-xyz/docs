@@ -4,43 +4,143 @@ title: "Deposits"
 
 ## Supported networks
 
-| Network | Token | What it funds |
-|---------|-------|---------------|
+| Network     | Token                 | What it funds                         |
+| ----------- | --------------------- | ------------------------------------- |
 | **Polygon** | USDC.e (bridged USDC) | Polymarket-powered prediction markets |
-| **Solana** | USDC | Kalshi markets via DFlow |
+| **Solana**  | USDC                  | Kalshi markets via DFlow              |
 
-## Depositing on Polygon
+## Getting crypto (if you don't have any)
+
+If you're new to crypto and don't already hold USDC, here's the quickest path:
+
+<Steps>
+  <Step title="Create an exchange account">
+    Sign up for a centralized exchange such as
+    [Coinbase](https://www.coinbase.com), [Kraken](https://www.kraken.com), or
+    [Binance](https://www.binance.com). You'll need to verify your identity
+    (KYC) before you can buy or withdraw crypto.
+  </Step>
+  <Step title="Deposit fiat currency">
+    Link a bank account, debit card, or other payment method and deposit USD (or
+    your local currency) into your exchange account.
+  </Step>
+  <Step title="Buy USDC">
+    Purchase **USDC** on the exchange. USDC is a stablecoin pegged 1:1 to the US
+    dollar, so 1 USDC ≈ $1.
+  </Step>
+  <Step title="Send to your wallet">
+    Withdraw USDC from the exchange to a self-custody wallet like **MetaMask**
+    or **Coinbase Wallet**. Make sure you select the correct network (Polygon
+    for USDC.e, Solana for USDC, or any supported chain if you plan to use Blink
+    — see below).
+  </Step>
+</Steps>
+
+<Tip>
+  If you already have USDC in a wallet, skip straight to the deposit methods
+  below.
+</Tip>
+
+## Depositing on Noma
+
+Click the **Deposit** button on the dashboard to open the deposit modal. Choose to deposit either **USDC.e on Polygon** or **USDC on Solana** depending on which markets you want to trade.
+
+<Frame>
+  <img
+    src="/images/noma-deposit-dashboard.jpg"
+    alt="Noma dashboard with Deposit button highlighted"
+  />
+</Frame>
+
+### Depositing on Polygon
 
 Polygon deposits go to your **Trading Safe** — the smart contract wallet that holds your trading funds and executes trades.
 
 <Warning>
-If you haven't set up your Trading Safe yet, noma will prompt you to complete the one-time [wallet setup](/wallet/setup) first. It takes 30 seconds and is completely free.
+  If you haven't set up your Trading Safe yet, noma will prompt you to complete
+  the one-time [wallet setup](/wallet/setup) first. It takes 30 seconds and is
+  completely free.
 </Warning>
 
-### Methods
+#### Methods
 
-1. **QR code** — Scan with any wallet app to send USDC.e directly to your Safe
-2. **Direct transfer** — Copy your Safe address and send USDC.e from any Polygon wallet
-3. **On-ramp** — Buy USDC with a debit card or bank transfer via MoonPay (built into the deposit modal)
+1. **QR code** — Scan with any wallet app to send USDC.e directly to your Safe.
+2. **Direct transfer** — Copy your Safe address and send USDC.e from any Polygon wallet.
+3. **Coinbase Onramp** — Buy USDC with a debit card or bank transfer directly within the deposit modal.
+4. **Blink** — Connect your browser extension wallet (MetaMask, Coinbase Wallet, etc.) and Blink automatically bridges your funds to the correct chain. For example, you can send USDC from **Base** and receive **USDC.e on Polygon** — no manual bridging required.
 
-### Important
+<Frame>
+  <img
+    src="/images/deposits-modal.jpg"
+    alt="Deposit modal showing chain selection (Polygon USDC.e or Solana USDC) and amount input"
+  />
+</Frame>
+
+#### Important
 
 - Send **USDC.e** (bridged USDC), not native USDC. Contract: `0x2791Bca1f2de4661ED88A30C99A7a9449Aa84174`
-- Send to your **Safe address**, not your embedded wallet address. Your Safe address is shown in the deposit modal
-- Deposits typically confirm in under 30 seconds on Polygon
+- Send to your **Safe address**, not your embedded wallet address. Your Safe address is shown in the deposit modal.
+- Deposits typically confirm in under 30 seconds on Polygon.
 
-## Depositing on Solana
+### Depositing on Solana
 
 Solana deposits go directly to your embedded Solana wallet address. Use the deposit modal to view your address or QR code.
+
+<Frame>
+  <img
+    src="/images/deposits-modal-sol.jpg"
+    alt="Deposit modal showing chain selection (Polygon USDC.e or Solana USDC) and amount input"
+  />
+</Frame>
+
+## Depositing with Blink
+
+Blink is the easiest way to deposit if you already hold crypto in a browser extension wallet on any supported chain.
+
+<Steps>
+  <Step title="Open the deposit modal">
+    Click **Deposit** on the dashboard and select **Blink**.
+  </Step>
+  <Step title="Connect your wallet">
+    Connect your browser extension wallet (MetaMask, Coinbase Wallet, or any
+    compatible wallet).
+    <Frame>
+      <img
+        src="/images/deposit-blink-wallet-connect.jpg"
+        alt="Blink deposit flow showing wallet connect screen with wallet options"
+      />
+    </Frame>
+  </Step>
+  <Step title="Choose amount and confirm">
+    Enter the amount of USDC you'd like to deposit. Blink handles all bridging
+    automatically — for example, USDC on Base is converted to USDC.e on Polygon
+    behind the scenes.
+    <Frame>
+      <img
+        src="/images/deposit-blink-coin-selection.jpg"
+        alt="Blink deposit flow showing coin selection screen with available options"
+      />
+    </Frame>
+  </Step>
+</Steps>
+
+<Note>
+  Blink supports bridging from multiple chains. You don't need to manually
+  bridge or swap tokens before depositing.
+</Note>
 
 ## Checking your balance
 
 Your balance is shown in the top-right corner of the app. Click it to see your Safe address (Polygon), Solana wallet, and quick access to the deposit modal.
 
 <Note>
-Balance updates may take a few seconds after a deposit confirms on-chain.
+  Balance updates may take a few seconds after a deposit confirms on-chain.
 </Note>
 
-<Card title="Place your first trade" icon="arrow-right" href="/predict/placing-a-trade">
+<Card
+  title="Place your first trade"
+  icon="arrow-right"
+  href="/predict/placing-a-trade"
+>
   Your funds are ready — now buy or sell shares with zero fees and zero gas.
 </Card>
