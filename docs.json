@@ -27,6 +27,7 @@
             "group": "Predict",
             "pages": [
               "predict/overview",
+              "predict/account-funding",
               "predict/placing-a-trade",
               "predict/managing-orders",
               "predict/portfolio",

@@ -1,0 +1,132 @@
+---
+title: "Account Funding"
+description: "Three ways to get funds onto noma — pick the one that fits how you already move money."
+---
+
+You're one transfer away from your first prediction. Whether you already hold crypto, want to pay by card, or need to move funds from another chain — noma supports all three. Pick the path that fits how you already move money.
+
+<Tip>
+noma charges **zero platform fees** on deposits, withdrawals, and trades. Gas is covered on both Polygon and Solana. You never need MATIC or SOL in your wallet.
+</Tip>
+
+## Which method should you pick?
+
+| If you… | Use | Time |
+|---|---|---|
+| Already hold USDC in a wallet | **Wallet-to-wallet transfer** | ~30 seconds |
+| Want to pay with a debit card or bank | **Coinbase Onramp** (fiat on-ramp) | ~2 minutes |
+| Hold crypto on Ethereum, Arbitrum, Base, or another chain | **Blink** (bridge) | ~1–3 minutes |
+
+All three drop funds directly into your noma account. You don't need to pick a "main" method — mix and match as you go.
+
+---
+
+## Option 1: Wallet-to-wallet transfer
+
+The fastest path if you already hold USDC. Send it from any wallet — MetaMask, Phantom, Coinbase Wallet, hardware wallets, exchanges — directly to your noma deposit address.
+
+<Warning>
+Send the **right token on the right network**. Sending the wrong asset, or the right asset on the wrong chain, can result in permanent loss of funds. Always double-check the contract address before you send.
+</Warning>
+
+### Polygon — USDC.e (for Polymarket markets)
+
+Polymarket-powered markets settle in **USDC.e** (bridged USDC) on Polygon. Deposits go to your **Trading Safe** — a smart contract wallet noma deploys for you on first use. See [Wallet Setup](/wallet/setup) for how the Safe works.
+
+- **Network:** Polygon PoS
+- **Token:** USDC.e (bridged USDC)
+- **USDC.e contract address:** `0x2791Bca1f2de4661ED88A30C99A7a9449Aa84174`
+- **Deposit address:** Your Safe address — shown in the deposit modal inside the app
+
+<Note>
+USDC.e ≠ native USDC on Polygon. They are two different tokens with two different contract addresses. noma uses USDC.e because that's what Polymarket settles in. If you're sending from an exchange, make sure the withdrawal asset is **USDC.e** (sometimes labelled "Bridged USDC").
+</Note>
+
+### Solana — USDC (for Kalshi markets)
+
+Kalshi markets are accessed through DFlow on Solana and settle in native **USDC**. Deposits go to your embedded Solana wallet.
+
+- **Network:** Solana
+- **Token:** USDC
+- **USDC mint address:** `EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v`
+- **Deposit address:** Your Solana wallet address — shown in the deposit modal inside the app
+
+### How to do it
+
+1. In the noma app, click the **+** button in the header to open the deposit modal
+2. Pick the network you want to fund — **Polygon** (USDC.e) or **Solana** (USDC)
+3. Copy your deposit address, or scan the QR code with your wallet app
+4. Send from your external wallet
+5. Funds usually confirm in under 30 seconds on Polygon and a few seconds on Solana
+
+---
+
+## Option 2: Coinbase Onramp — fiat on-ramp
+
+No crypto yet? Buy USDC directly with a debit card or bank transfer through **Coinbase Onramp**, built into noma. Funds arrive in your noma account automatically — you don't have to hold anything in Coinbase first or figure out which network to choose.
+
+- **Pay with:** Debit card, Apple Pay, Google Pay, or bank transfer (ACH/SEPA where supported)
+- **You get:** USDC.e on Polygon or USDC on Solana — routed automatically to your noma account
+- **Best for:** First-time crypto users, or anyone who'd rather pay with a card than manage wallet transfers
+
+### How to do it
+
+1. In the noma app, click **+** → **Buy with card**
+2. Sign in or create a Coinbase account (if you don't already have one)
+3. Pick the amount and payment method
+4. Confirm — funds land in your noma account automatically
+
+<Note>
+Coinbase handles KYC for fiat purchases — that's a regulatory requirement, not a noma requirement. Once you're verified, future purchases take seconds.
+</Note>
+
+---
+
+## Option 3: Blink — bridge from another chain
+
+Already hold USDC or other assets on **Ethereum, Arbitrum, Base, Optimism, or another supported chain**? Bridge them to noma in a single step through our bridge provider, **Blink**. You don't need to manually bridge to Polygon or Solana first — Blink handles the routing and hands you USDC on the right chain.
+
+- **Bridge from:** Ethereum, Arbitrum, Base, Optimism, and other major EVM chains
+- **You get:** USDC.e on Polygon or USDC on Solana — delivered straight to your noma account
+- **Best for:** Traders with balances scattered across chains who don't want to juggle bridges
+
+### How to do it
+
+1. In the noma app, click **+** → **Bridge from another chain**
+2. Connect the wallet holding your source funds
+3. Pick your source chain and asset
+4. Confirm — Blink quotes the route, you approve, funds land on noma
+
+<Note>
+Blink charges a small bridge fee (shown before you confirm). noma doesn't take any cut on top.
+</Note>
+
+---
+
+## Common questions
+
+**Do I need to pay for gas?**
+No. noma covers gas on both Polygon and Solana for every trade, order cancellation, and payout claim. You only need USDC.e or USDC in your account.
+
+**Is there a minimum deposit?**
+noma doesn't enforce one. But very small deposits can be uneconomical on some bridges because of source-chain gas, and providers enforce minimum order sizes at trade time — see [Placing a Trade](/predict/placing-a-trade).
+
+**What if I send the wrong token or wrong network?**
+Contact support immediately. Some cases (e.g. native USDC sent to a USDC.e address on the same chain) are recoverable; cross-chain mistakes usually are not. When in doubt, test with a small amount first.
+
+**Can I withdraw the same way I deposited?**
+Yes. Withdrawals use the same networks and tokens — send USDC.e out to any Polygon address, or USDC out to any Solana address. No fees, gas covered.
+
+**Do Polygon and Solana balances sync?**
+No — they're separate. USDC.e on Polygon funds Polymarket-powered markets; USDC on Solana funds Kalshi. noma picks the right chain automatically when you trade, and the UI shows your total balance across both.
+
+---
+
+<CardGroup cols={2}>
+  <Card title="Set up your wallet" icon="wallet" href="/wallet/setup">
+    How noma's two-wallet system works — and why it's gasless.
+  </Card>
+  <Card title="Place your first trade" icon="arrow-right" href="/predict/placing-a-trade">
+    Your account is funded. Now buy or sell shares — zero platform fees, best price.
+  </Card>
+</CardGroup>
