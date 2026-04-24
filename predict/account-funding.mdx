@@ -5,17 +5,13 @@ description: "Three ways to get funds onto noma — pick the one that fits how y
 
 You're one transfer away from your first prediction. Whether you already hold crypto, want to pay by card, or need to move funds from another chain — noma supports all three. Pick the path that fits how you already move money.
 
-<Tip>
-noma charges **zero platform fees** on deposits, withdrawals, and trades. Gas is covered on both Polygon and Solana. You never need MATIC or SOL in your wallet.
-</Tip>
-
 ## Which method should you pick?
 
-| If you… | Use | Time |
-|---|---|---|
-| Already hold USDC in a wallet | **Wallet-to-wallet transfer** | ~30 seconds |
-| Want to pay with a debit card or bank | **Coinbase Onramp** (fiat on-ramp) | ~2 minutes |
-| Hold crypto on Ethereum, Arbitrum, Base, or another chain | **Blink** (bridge) | ~1–3 minutes |
+| If you… | Use | Fee | Time |
+|---|---|---|---|
+| Already hold USDC in a wallet | **Wallet-to-wallet transfer** | Source-chain gas only | ~30 seconds |
+| Want to pay with a debit card or bank | **Coinbase Onramp** (fiat on-ramp) | Coinbase's standard card/bank fee | ~2 minutes |
+| Hold crypto on Ethereum, Arbitrum, Base, or another chain | **Blink** (bridge) | **0%** — Blink sponsors bridge fees | ~1–3 minutes |
 
 All three drop funds directly into your noma account. You don't need to pick a "main" method — mix and match as you go.
 
@@ -88,6 +84,7 @@ Already hold USDC or other assets on **Ethereum, Arbitrum, Base, Optimism, or an
 
 - **Bridge from:** Ethereum, Arbitrum, Base, Optimism, and other major EVM chains
 - **You get:** USDC.e on Polygon or USDC on Solana — delivered straight to your noma account
+- **Fee:** **0%.** Blink sponsors bridge fees for noma users — you only pay source-chain gas to sign the transaction
 - **Best for:** Traders with balances scattered across chains who don't want to juggle bridges
 
 ### How to do it
@@ -98,7 +95,7 @@ Already hold USDC or other assets on **Ethereum, Arbitrum, Base, Optimism, or an
 4. Confirm — Blink quotes the route, you approve, funds land on noma
 
 <Note>
-Blink charges a small bridge fee (shown before you confirm). noma doesn't take any cut on top.
+Blink sponsors the bridge fee for noma users — there's no Blink fee and no noma fee on top. You only pay source-chain gas to broadcast the transaction from your own wallet.
 </Note>
 
 ---
@@ -106,7 +103,7 @@ Blink charges a small bridge fee (shown before you confirm). noma doesn't take a
 ## Common questions
 
 **Do I need to pay for gas?**
-No. noma covers gas on both Polygon and Solana for every trade, order cancellation, and payout claim. You only need USDC.e or USDC in your account.
+Once funds are in noma, no — noma covers gas on both Polygon and Solana for every trade, order cancellation, and payout claim. For the deposit itself, you pay gas on the source chain you're sending from (Ethereum, Arbitrum, Base, etc.) — that's a network fee paid to validators, not to noma or Blink.
 
 **Is there a minimum deposit?**
 noma doesn't enforce one. But very small deposits can be uneconomical on some bridges because of source-chain gas, and providers enforce minimum order sizes at trade time — see [Placing a Trade](/predict/placing-a-trade).
