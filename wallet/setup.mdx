@@ -2,41 +2,57 @@
 title: "Wallet Setup"
 ---
 
-Noma creates a secure, non-custodial wallet for you automatically when you sign up. The entire setup takes about 30 seconds, costs you nothing, and you only do it once. No seed phrases, no browser extensions, no MATIC needed — just sign in and start trading.
+Noma sets up your wallets automatically when you sign up — no seed phrases, no browser extensions, no gas tokens to buy. Sign in and you're ready to trade in about 30 seconds.
 
 Below is how it works under the hood.
 
-## Wallet architecture
+## Your signing wallets
 
-Noma uses a two-wallet system for secure, gasless trading on Polygon:
+The moment you sign up, [Privy](https://www.privy.io/) creates two embedded wallets for you:
 
-| Wallet | Purpose |
-|--------|---------|
-| **Embedded wallet (EOA)** | Your main wallet, created automatically when you sign up. Holds your keys. |
-| **Trading Safe** | A smart contract wallet (Gnosis Safe) deployed on Polygon. Holds your trading funds and executes trades. |
+| Wallet | Chain | Purpose |
+|--------|-------|---------|
+| **EVM wallet** | Polygon (and other EVM chains) | Signs trades on EVM-based providers like Polymarket. |
+| **Solana wallet** | Solana | Signs trades on Solana-based providers like Kalshi (via DFlow). |
 
-The Safe is controlled by your embedded wallet — only you can authorize transactions.
+Both are **non-custodial** — your keys live on your device, not on noma's servers. You can export the private key for either wallet from **Settings → Wallets** at any time and use it in any compatible wallet (MetaMask, Phantom, etc.).
+
+These are your **signing wallets**. They authorize every action you take on noma. On Solana, your embedded wallet trades directly. On EVM, it doesn't trade directly — it controls a smart contract wallet (a Safe) that does.
+
+## What's a Safe?
+
+A [Safe](https://safe.global/) (formerly Gnosis Safe) is a smart contract wallet deployed on-chain. Think of it as a programmable account your embedded EVM wallet owns and controls.
+
+Why noma uses one for EVM trading:
+
+- **Only your signature moves funds.** The Safe is owned by your embedded EVM wallet — noma can't touch it.
+- **It batches transactions.** Approvals, trades, and claims can be combined into a single signed action.
+- **It enables gasless trading.** Relayers can sponsor gas on your behalf, but they can only submit transactions you've explicitly signed.
+
+Each EVM provider has its own setup. Polymarket uses a Safe; other EVM providers may use a different proxy contract with the same principle — your signing wallet stays in control, and the proxy does the trading.
+
+Solana doesn't need this — the embedded Solana wallet signs and trades directly.
 
 ## First-time setup
 
-When you first deposit to Polygon or place a trade, noma walks you through a one-time setup:
+The first time you deposit to Polygon or place a trade, noma runs a one-time setup for your Safe:
 
 <Steps>
-  <Step title="Deploy Safe">
-    A Gnosis Safe contract is deployed on Polygon for your account. You'll sign a message to authorize the deployment. This is gasless — noma covers the transaction fees.
+  <Step title="Deploy your Safe">
+    A Safe contract is deployed on Polygon and linked to your embedded EVM wallet. You sign a message to authorize it — noma covers the gas.
   </Step>
   <Step title="Set approvals">
-    The Safe needs permission to interact with the prediction market contracts (CTF Exchange). A batch of approval transactions is signed and relayed. Also gasless.
+    Your Safe signs a batch of approvals so it can interact with the prediction market contracts (CTF Exchange). Gasless.
   </Step>
   <Step title="Generate trading credentials">
-    API credentials are derived for your wallet to authenticate with the order matching engine. You sign an EIP-712 message, and noma securely stores the encrypted credentials on the backend.
+    You sign an EIP-712 message that derives API credentials for the order matching engine. Noma stores them encrypted on the backend.
   </Step>
-  <Step title="Save Safe address">
-    Your Safe address is linked to your noma profile. All future Polygon deposits go to this address.
+  <Step title="Link your Safe">
+    Your Safe address is saved to your noma profile. All future Polygon deposits go straight to it.
   </Step>
 </Steps>
 
-The entire process takes about 30 seconds and requires 2–3 signature prompts (no gas fees).
+The whole thing takes about 30 seconds and 2–3 signature prompts. No gas fees.
 
 ## Gasless trading
 
