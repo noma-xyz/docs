@@ -1,0 +1,134 @@
+---
+title: "Arbitrage"
+description: "How cross-provider arbitrage works on noma, and what to watch out for before placing trades."
+---
+
+Noma's arbitrage scanner finds price differences between Polymarket, Kalshi, and other connected providers. When the same market is priced differently on two venues, you may be able to profit by buying opposite outcomes on each.
+
+<Warning>
+  **Arbitrage is not risk-free.** Different providers may have different resolution criteria, timeframes, and sources. A trade that looks profitable on paper can lose if one side resolves differently than expected. Always check the full rules on both providers before trading.
+</Warning>
+
+## How arbitrage works
+
+Prediction markets pay out \$1 per share if your outcome wins, and \$0 if it loses. If you can buy **Yes** on one provider and **No** on another for a combined cost under \$1, you're guaranteed a profit regardless of the outcome.
+
+**Example:**
+- Buy **Yes** on Kalshi at **40¢**
+- Buy **No** on Polymarket at **45¢**
+- Total cost: **85¢**
+- Payout: **\$1** (one side always wins)
+- Profit: **15¢ per share**
+
+### Which side to buy first
+
+We generally recommend buying the **Kalshi** side first. Kalshi markets tend to be less liquid, so the price you see may move faster. Polymarket typically has deeper liquidity and is more likely to still be available at the quoted price after you fill the Kalshi side.
+
+This is a guideline, not a rule — check the orderbook depth on both sides before deciding.
+
+## The arbitrage scanner
+
+The scanner monitors all matched market pairs across providers in real time using WebSocket orderbook feeds. Every 30 seconds, it compares prices and identifies opportunities with a spread of at least 2¢.
+
+For each opportunity, the scanner provides:
+
+| Field | Description |
+|-------|-------------|
+| **Spread** | Price difference between the two sides (before fees) |
+| **ROI** | Return on investment as a percentage |
+| **Profit** | Maximum profit from walking the full orderbook |
+| **Volume** | Total capital needed to capture the full opportunity |
+
+### Top of book vs. full book walk
+
+- **Top of book** shows the best available price on each side and how many shares you can trade at that exact price.
+- **Full book walk** shows the total opportunity across all profitable price levels. As you buy more shares, you move deeper into the orderbook and the spread narrows — the scanner calculates the total executable volume before the spread reaches zero.
+
+Click any row in the scanner to expand and see both breakdowns.
+
+## Risks and edge cases
+
+### Resolution criteria differences
+
+The biggest risk in cross-provider arbitrage is **resolution divergence** — the two providers resolve the same event differently.
+
+<Warning>
+  **Always read the full rules on both providers before trading.** The market titles may look identical, but the fine print can differ in ways that affect your payout.
+</Warning>
+
+Common scenarios where resolution can diverge:
+
+#### Sports and esports — forfeitures, cancellations, and walkovers
+
+This is the most common source of resolution divergence. Different providers handle abnormal game outcomes very differently.
+
+**Example — esports forfeit:**
+
+You spot an arb on a CS2 match: Team A vs Team B.
+- You buy **Yes Team A** on Polymarket at 40¢
+- You buy **No Team A** (i.e. Team B wins) on Kalshi at 45¢
+- Total cost: 85¢, expected profit: 15¢
+
+Team B forfeits before the match starts.
+
+- **Kalshi** resolves based on forfeit rules — depending on the provider's specific rules and who caused the forfeit, your **Yes Team A** bet may lose and you get \$0
+- **Polymarket** voids the market because the match wasn't actually played — your **No Team A** position is refunded and you get back 45¢
+
+**Result:** You lost 40¢ on Kalshi and only got your 45¢ refunded on Polymarket. **You lost money on what appeared to be a guaranteed arb.**
+
+Always check each provider's rules for how they handle forfeitures, walkovers, and cancellations before entering any sports or esports arb position.
+
+The same pattern applies to:
+- **Game postponements** — one provider may wait for the rescheduled game, the other may void after 24-48 hours
+- **Walkovers in tennis** — a player retiring mid-match vs withdrawing before it starts may be treated differently
+- **Rain delays in baseball** — official MLB rules for shortened games differ from provider resolution rules
+- **Disqualifications in combat sports** — a DQ win may count as a "win" on one provider but not the other
+
+<Warning>
+  Sports and esports markets are the highest-risk category for arbitrage. Always check both providers' rules for forfeit, cancellation, postponement, and walkover scenarios before entering an arb position.
+</Warning>
+
+#### Wording differences
+
+Pay close attention to the exact question:
+
+- "Will SpaceX **confirm** an IPO?" vs. "Will SpaceX **complete** an IPO?" — one resolves on announcement, the other on the actual listing.
+- "Before April 2026" vs. "By December 31, 2026" — same asset, same threshold, but different deadlines means different bets entirely.
+- "Will Bitcoin **reach** \$100k?" vs. "Will Bitcoin be **above** \$100k at expiry?" — one needs a touch at any point, the other needs it to close above.
+
+#### Multi-outcome and neg-risk markets
+
+Some Polymarket markets are **neg-risk** — part of a multi-outcome event where only one outcome can win. For example, "Which bank will lead SpaceX's IPO?" has Bank of America, Goldman Sachs, Morgan Stanley, and "Other" as options.
+
+- If no IPO happens, Polymarket resolves to "Other" — **all named bank outcomes resolve No.**
+- Kalshi's equivalent market also resolves No if no IPO happens.
+- In this case, both sides agree. But always verify the "Other" / "No Contest" resolution logic on each provider.
+
+#### Time-of-day and timezone differences
+
+Weather, sports, and price markets often have different trading cutoff times:
+
+- Polymarket may stop accepting orders at 8:00 AM ET while the event doesn't resolve until end of day.
+- Kalshi may keep the market open until midnight ET.
+- The orderbook may still show stale prices on the closed side.
+
+### Fees
+
+The spread shown in the scanner is **before provider fees**. Both Polymarket and Kalshi charge fees that vary based on trade size and price. Small spreads (under 3-4¢) may not be profitable after fees.
+
+### Execution risk
+
+Prices move. By the time you fill one side, the other side's price may have changed. The scanner shows real-time data, but there's always a gap between seeing an opportunity and executing both legs.
+
+### Liquidity
+
+The "Profit" and "Volume" columns show the maximum opportunity based on current orderbook depth. Thin orderbooks can move significantly when you place even a small order.
+
+## Best practices
+
+1. **Check rules on both providers** — click through to the market on each provider's site and read the resolution criteria
+2. **Start small** — test with small amounts before sizing up
+3. **Buy the less liquid side first** — usually Kalshi, then Polymarket
+4. **Watch for resolution divergence** — especially on sports, weather, and event-specific markets
+5. **Factor in fees** — small spreads may not be profitable after provider fees
+6. **Don't assume identical wording means identical rules** — always verify

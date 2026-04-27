@@ -44,6 +44,12 @@
             ]
           },
           {
+            "group": "Arbitrage",
+            "pages": [
+              "arbitrage"
+            ]
+          },
+          {
             "group": "Wallet & Deposits",
             "pages": [
               "wallet/setup",
