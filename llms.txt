@@ -6,7 +6,7 @@
 
 - Getting Started: /index, /quickstart, /why-noma, /how-prediction-markets-work
 - Predict: /predict/overview, /predict/placing-a-trade, /predict/managing-orders, /predict/portfolio, /predict/five-minute-markets
-- How Noma Works: /predict/providers, /predict/best-execution, /predict/cross-provider-matching
+- How Noma Works: /predict/providers, /predict/best-execution, /predict/cross-provider-matching, /predict/discovery
 - Identity & Rewards: /social/noma-id, /social/leaderboards, /social/badges, /social/pulses, /rewards/overview, /rewards/multipliers
 - Funds: /funds/overview, /funds/becoming-a-manager
 - Wallet & Deposits: /wallet/setup, /wallet/deposits
@@ -16,7 +16,7 @@
 
 ## What noma does
 
-noma aggregates prediction markets from Polymarket (decentralized, Polygon) and Kalshi (CFTC-regulated, Solana via DFlow) into one interface. Zero trading fees, best-price routing across providers, embedded wallets, and a portable identity (Noma ID) with leaderboards, badges, and streaks.
+noma aggregates prediction markets from Polymarket (decentralized, Polygon), Kalshi (CFTC-regulated, Solana via DFlow), and Limitless Exchange (decentralized, Base) into one interface. Zero trading fees, best-price routing across all three providers, embedded wallets, and a portable identity (Noma ID) with leaderboards, badges, and streaks. Personalized market discovery powered by social graph signals, vector similarity, and trading history.
 
 ## Links
 

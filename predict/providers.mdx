@@ -1,9 +1,9 @@
 ---
 title: "Providers"
-description: "Polymarket, Kalshi, and more — where noma's markets come from."
+description: "Polymarket, Kalshi, Limitless — where noma's markets come from."
 ---
 
-Noma aggregates prediction markets from multiple providers into a single interface. You can browse every market regardless of provider, but where you can **trade** depends on your verification status.
+Noma aggregates prediction markets from three providers into a single interface. You can browse every market regardless of provider, but where you can **trade** depends on your verification status.
 
 ## Polymarket
 
@@ -43,14 +43,50 @@ Because Kalshi is a regulated US exchange, federal law requires identity verific
 
 - Trade on both Polymarket **and** Kalshi markets
 - Access Kalshi-exclusive markets not available on Polymarket
-- Better execution when the same market exists on both venues — noma can route your order to whichever has the better price
+- Better execution when the same market exists on multiple venues — noma can route your order to whichever has the better price
 
 ### Without KYC
 
-- Trade on Polymarket markets only
+- Trade on Polymarket and Limitless markets immediately
 - Still see and browse all markets from all providers
 - View Kalshi orderbooks and prices for comparison
 - Cross-provider market data (combined volume, linked markets) is still visible
+
+## Limitless Exchange
+
+| | |
+|---|---|
+| **Type** | Decentralized prediction market |
+| **Chain** | Base (Ethereum L2) |
+| **Collateral** | USDC |
+| **Orderbook** | On-chain CLOB with real-time WebSocket feeds |
+| **KYC** | Not required |
+
+Limitless Exchange is an on-chain prediction market on Base with 500+ active markets spanning crypto, politics, sports, and more — including ultra-fast 5-minute and 15-minute rounds for BTC, ETH, and other assets. Noma connects directly to Limitless's orderbook via WebSocket for real-time quotes and order execution.
+
+**No KYC is needed to trade on Limitless.** When you sign into noma and set up your trading account, you're immediately able to trade any Limitless-powered market.
+
+### Gas-sponsored trading
+
+Limitless markets on noma are fully gas-sponsored — you never need to hold Base ETH. Noma covers all on-chain transaction costs through Privy's sponsored transaction infrastructure. You only need USDC.
+
+### How trading works
+
+Noma uses Limitless's **Partner API** to execute trades on your behalf:
+
+1. You place an order in the noma interface
+2. Your embedded wallet signs the order
+3. Noma submits the order to Limitless via HMAC-authenticated API
+4. The order is matched on-chain on Base
+
+Settlement and redemption happen on-chain via the CTF (Conditional Token Framework) contract. When a market resolves, your winning shares are redeemable directly — gas is covered by noma.
+
+### What Limitless adds
+
+- **500+ markets** — crypto rounds, Champions League, politics, sports, and more
+- **5-minute and 15-minute rounds** — ultra-fast markets that complement Polymarket's and Kalshi's offerings
+- **No KYC, no gas** — trade immediately with zero friction
+- **Cross-provider matching** — when the same market exists on Limitless and another provider, noma compares prices and routes to the best fill
 
 ## Geographic restrictions
 
@@ -67,9 +103,9 @@ See the [Terms of Service](https://noma.xyz/terms) for the full list of restrict
 When viewing a market, provider badges show where it's available:
 
 - Markets available on one provider show a single badge
-- Markets matched across providers show multiple badges (e.g., both Polymarket and Kalshi)
+- Markets matched across providers show multiple badges (e.g., Polymarket, Kalshi, and Limitless)
 - Combined volume from all providers is displayed on the market card
 
 <Card title="How the matching engine works" icon="link" href="/predict/cross-provider-matching">
-  How noma identifies the same market across Polymarket, Kalshi, and other providers — from structural matching to AI-powered semantic analysis.
+  How noma identifies the same market across Polymarket, Kalshi, Limitless, and other providers — from structural matching to AI-powered semantic analysis.
 </Card>

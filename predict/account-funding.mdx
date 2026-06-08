@@ -47,13 +47,21 @@ Kalshi markets are accessed through DFlow on Solana and settle in native **USDC*
 - **USDC mint address:** `EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v`
 - **Deposit address:** Your Solana wallet address — shown in the deposit modal inside the app
 
+### Base — USDC (for Limitless markets)
+
+Limitless Exchange markets settle in native **USDC** on Base (Ethereum L2). Gas is fully sponsored — you never need Base ETH.
+
+- **Network:** Base
+- **Token:** USDC
+- **Deposit address:** Your Base wallet address — shown in the deposit modal inside the app
+
 ### How to do it
 
 1. In the noma app, click the **+** button in the header to open the deposit modal
-2. Pick the network you want to fund — **Polygon** (USDC.e) or **Solana** (USDC)
+2. Pick the network you want to fund — **Polygon** (USDC.e), **Solana** (USDC), or **Base** (USDC)
 3. Copy your deposit address, or scan the QR code with your wallet app
 4. Send from your external wallet
-5. Funds usually confirm in under 30 seconds on Polygon and a few seconds on Solana
+5. Funds usually confirm in under 30 seconds on Polygon, a few seconds on Solana, and a few seconds on Base
 
 ---
 
@@ -103,7 +111,7 @@ Blink sponsors the bridge fee for noma users — there's no Blink fee and no nom
 ## Common questions
 
 **Do I need to pay for gas?**
-Once funds are in noma, no — noma covers gas on both Polygon and Solana for every trade, order cancellation, and payout claim. For the deposit itself, you pay gas on the source chain you're sending from (Ethereum, Arbitrum, Base, etc.) — that's a network fee paid to validators, not to noma or Blink.
+Once funds are in noma, no — noma covers gas on Polygon, Solana, and Base for every trade, order cancellation, and payout claim. For the deposit itself, you pay gas on the source chain you're sending from (Ethereum, Arbitrum, etc.) — that's a network fee paid to validators, not to noma or Blink.
 
 **Is there a minimum deposit?**
 noma doesn't enforce one. But very small deposits can be uneconomical on some bridges because of source-chain gas, and providers enforce minimum order sizes at trade time — see [Placing a Trade](/predict/placing-a-trade).
@@ -114,8 +122,8 @@ Contact support immediately. Some cases (e.g. native USDC sent to a USDC.e addre
 **Can I withdraw the same way I deposited?**
 Yes. Withdrawals use the same networks and tokens — send USDC.e out to any Polygon address, or USDC out to any Solana address. No fees, gas covered.
 
-**Do Polygon and Solana balances sync?**
-No — they're separate. USDC.e on Polygon funds Polymarket-powered markets; USDC on Solana funds Kalshi. noma picks the right chain automatically when you trade, and the UI shows your total balance across both.
+**Do Polygon, Solana, and Base balances sync?**
+No — they're separate. USDC.e on Polygon funds Polymarket markets; USDC on Solana funds Kalshi; USDC on Base funds Limitless. noma picks the right chain automatically when you trade, and the UI shows your total balance across all three.
 
 ---
 

@@ -2,14 +2,14 @@
 title: "Matching Engine"
 ---
 
-When Polymarket lists "Bitcoin above \$95,000 by March 20?" and Kalshi lists the same question with different wording, noma needs to recognize they're the same bet. This is what the **matching engine** does — it links equivalent markets across providers so you see unified data, combined volume, and can trade on whichever venue offers the best price.
+When Polymarket lists "Bitcoin above \$95,000 by March 20?" and Kalshi or Limitless lists the same question with different wording, noma needs to recognize they're the same bet. This is what the **matching engine** does — it links equivalent markets across providers so you see unified data, combined volume, and can trade on whichever venue offers the best price.
 
 ## Why matching matters
 
 Without matching, you'd see the same market listed twice — once from each provider — with separate volume, separate orderbooks, and no way to compare. Matching lets noma:
 
 - **Merge market cards** — show one card with combined volume instead of duplicates
-- **Display multi-provider badges** — so you know a market is available on both Polymarket and Kalshi
+- **Display multi-provider badges** — so you know a market is available on Polymarket, Kalshi, Limitless, or any combination
 - **Enable best execution** — route orders to the venue with the best price
 - **Show accurate market counts** — "6 markets" instead of "4 + 5 with 3 duplicates"
 
@@ -121,7 +121,7 @@ Once two markets are linked:
 
 - The market card shows **provider badges** for each venue
 - **Volume is combined** across providers — you see the total liquidity, not just one side
-- The market detail page shows **orderbooks from both providers** when available
+- The market detail page shows **orderbooks from all matched providers** when available
 - **Market count** reflects unique bets, not duplicates (e.g., 4 Polymarket + 5 Kalshi - 3 linked = 6 unique markets)
 
 <Warning>
@@ -129,5 +129,5 @@ Once two markets are linked:
 </Warning>
 
 <Card title="See all providers" icon="building-columns" href="/predict/providers">
-  Polymarket, Kalshi, and more — how each provider works and what KYC unlocks.
+  Polymarket, Kalshi, Limitless — how each provider works and what KYC unlocks.
 </Card>

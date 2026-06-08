@@ -12,7 +12,7 @@ The moment you sign up, [Privy](https://www.privy.io/) creates two embedded wall
 
 | Wallet | Chain | Purpose |
 |--------|-------|---------|
-| **EVM wallet** | Polygon (and other EVM chains) | Signs trades on EVM-based providers like Polymarket. |
+| **EVM wallet** | Polygon, Base (and other EVM chains) | Signs trades on EVM-based providers like Polymarket and Limitless. |
 | **Solana wallet** | Solana | Signs trades on Solana-based providers like Kalshi (via DFlow). |
 
 Both are **non-custodial** — your keys live on your device, not on noma's servers. You can export the private key for either wallet from **Settings → Wallets** at any time and use it in any compatible wallet (MetaMask, Phantom, etc.).
@@ -56,7 +56,7 @@ The whole thing takes about 30 seconds and 2–3 signature prompts. No gas fees.
 
 ## Gasless trading
 
-Noma covers all transaction fees on both Polygon and Solana — you never need to hold MATIC or SOL. You only need USDC.e (Polygon) or USDC (Solana) to trade.
+Noma covers all transaction fees on Polygon, Solana, and Base — you never need to hold MATIC, SOL, or ETH. You only need USDC to trade.
 
 **How it works:**
 
@@ -72,8 +72,9 @@ This applies to wallet setup, placing and cancelling orders, and claiming payout
 |-------|-------|--------------------|
 | **Polygon PoS** | USDC.e (bridged USDC) | Polymarket-powered prediction markets. All trading, order placement, and settlement happens here. |
 | **Solana** | USDC | Kalshi markets via DFlow. Used for Kalshi-sourced markets (requires KYC). |
+| **Base** | USDC | Limitless Exchange markets. Gas-sponsored trading on Ethereum's L2. |
 
-Your Polygon Trading Safe and Solana wallet are separate — deposits on one chain don't appear on the other. See [Deposits](/wallet/deposits) for how to fund each.
+Your Polygon Trading Safe, Solana wallet, and Base wallet are separate — deposits on one chain don't appear on the others. See [Deposits](/wallet/deposits) for how to fund each.
 
 ## Security
 

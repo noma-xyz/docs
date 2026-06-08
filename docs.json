@@ -40,6 +40,7 @@
               "predict/providers",
               "predict/best-execution",
               "predict/cross-provider-matching",
+              "predict/discovery",
               "predict/fees"
             ]
           },

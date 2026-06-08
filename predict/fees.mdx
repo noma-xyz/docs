@@ -7,9 +7,9 @@ description: "noma is free to use. Here's how fees work across providers."
 
 **noma charges zero platform fees.** No commission, no spread markup, no routing surcharge. On other aggregator platforms, trading fees cost you 1–2% per trade. On noma, every dollar goes toward your position.
 
-**noma also covers gas on both Polygon and Solana.** You never need MATIC or SOL — only the stablecoin you're trading with. See [Wallet Setup](/wallet/setup) for how gasless trading works.
+**noma also covers gas on Polygon, Solana, and Base.** You never need MATIC, SOL, or ETH — only the stablecoin you're trading with. See [Wallet Setup](/wallet/setup) for how gasless trading works.
 
-The providers that execute your trades — Polymarket and Kalshi — set their own taker fees. These are collected by the provider, not by noma, and are the same fees you'd pay trading direct.
+The providers that execute your trades — Polymarket, Kalshi, and Limitless — set their own taker fees. These are collected by the provider, not by noma, and are the same fees you'd pay trading direct.
 
 ## What you pay
 
@@ -17,8 +17,9 @@ The providers that execute your trades — Polymarket and Kalshi — set their o
 |----------|-----------|-----------------|
 | Polymarket | Probability-weighted taker fee, varies by market category | Deducted from shares received |
 | Kalshi (via DFlow) | Probability-weighted taker fee, based on builder tier | Included in execution price |
+| Limitless | Taker fee, varies by market | Included in execution price |
 
-Both providers use the same core idea: fees are highest when an outcome is near 50/50 and shrink as a market approaches certainty. Makers (limit orders that add liquidity) pay no fees on either provider.
+All three providers use the same core idea: fees are highest when an outcome is near 50/50 and shrink as a market approaches certainty. Makers (limit orders that add liquidity) pay no fees on any provider.
 
 ## Polymarket fees
 
@@ -33,6 +34,12 @@ Full details: [Polymarket fee documentation](https://docs.polymarket.com/trading
 Kalshi markets are accessed through DFlow's trading infrastructure. Fees are baked into the execution price — the price you see in your order summary is what you pay, fees included.
 
 Full details: [DFlow fee documentation](https://pond.dflow.net/build/prediction-markets/prediction-market-fees)
+
+## Limitless fees
+
+Limitless markets are executed on Base. Fees are included in the execution price — the price shown in your order summary includes fees. Gas is fully sponsored by noma.
+
+Full details: [Limitless Exchange documentation](https://limitless.exchange)
 
 ## Deposits and withdrawals
 

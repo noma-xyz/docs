@@ -1,6 +1,6 @@
 ---
 title: "Best Execution"
-description: "How noma finds you the best price across Polymarket, Kalshi, and every connected venue."
+description: "How noma finds you the best price across Polymarket, Kalshi, Limitless, and every connected venue."
 ---
 
 Noma pulls live orderbook data from every connected venue, compares prices in real time, and puts you on the one with the best fill. No stale quotes, no cached prices — just the current best ask and best bid, side by side.
@@ -30,10 +30,10 @@ Noma picks the best venue for you by default. You can override it at any time.
 
 ### Auto-routing
 
-Every time you navigate to a matched market — from the Predict page, a selector pill, a chart, or a shared link — noma evaluates both venues and selects one:
+Every time you navigate to a matched market — from the Predict page, a selector pill, a chart, or a shared link — noma evaluates all available venues and selects one:
 
 1. **Where you have funds** — If you only hold USDC on one chain (say Solana but not Polygon), noma routes to the venue where you can actually trade. No point landing on a venue with a zero balance.
-2. **Where the price is better** — If you have funds on both chains (or neither), noma picks the venue with the lower ask.
+2. **Where the price is better** — If you have funds on multiple chains (or none), noma picks the venue with the lower ask.
 
 <Tip>
 Auto-routing runs fresh every time you navigate. Switch to a different market within an event and it re-evaluates — you always land on the best venue for *that* market, not just the one you were on before.
@@ -52,7 +52,7 @@ This comparison runs against **live orderbook data**, not stored prices. And it 
 
 ### Manual override
 
-Click the **Polymarket** or **Kalshi** tab in the trading panel to lock in your choice. Once you pick a provider manually, noma respects it — auto-routing won't override you until you navigate to a different market.
+Click the **Polymarket**, **Kalshi**, or **Limitless** tab in the trading panel to lock in your choice. Once you pick a provider manually, noma respects it — auto-routing won't override you until you navigate to a different market.
 
 ### Shareable links
 
@@ -69,10 +69,10 @@ No `tab` parameter? Auto-routing decides. Select a different market and the `tab
 
 | Your status | Where noma can route you |
 |-------------|-------------------------|
-| **No KYC** | Polymarket only |
-| **KYC verified (via Proof)** | Polymarket + Kalshi — best price wins |
+| **No KYC** | Polymarket + Limitless |
+| **KYC verified (via Proof)** | Polymarket + Kalshi + Limitless — best price wins |
 
-Without verification, every order goes to Polymarket. Complete KYC through Proof and noma unlocks Kalshi — comparing both orderbooks and routing to whichever has the better fill.
+Without verification, orders route to Polymarket and Limitless. Complete KYC through Proof and noma unlocks Kalshi — comparing all three orderbooks and routing to whichever has the better fill.
 
 Kalshi markets require identity verification through [Proof](https://dflow.net/proof), a privacy-preserving KYC provider. This is a one-time process that takes about 2 minutes.
 
@@ -85,6 +85,6 @@ Kalshi markets require identity verification through [Proof](https://dflow.net/p
     How noma identifies the same market across different providers.
   </Card>
   <Card title="See all providers" icon="building-columns" href="/predict/providers">
-    Polymarket, Kalshi, and what KYC unlocks.
+    Polymarket, Kalshi, Limitless, and what KYC unlocks.
   </Card>
 </CardGroup>

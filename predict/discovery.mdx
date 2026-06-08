@@ -1,0 +1,84 @@
+---
+title: "Discovery"
+description: "Your feed learns what you care about. The more you trade, the sharper it gets."
+---
+
+The Predict page isn't a static list. It's a personalized feed that adapts to your trading history, your social graph, and real-time market activity. Every trader's feed is different — yours is built from six distinct signal layers, blended and deduplicated in real time.
+
+The result: the markets most likely to matter to you surface first. No manual filtering. No algorithmic noise. Just the bets your network is making, the markets that match your track record, and the opportunities you'd otherwise miss.
+
+## How your feed is built
+
+Noma's discovery engine scores every active market against your profile and ranks them using six signal layers. Each layer captures a different dimension of relevance — social, semantic, competitive, momentum, personal history, and behavioral patterns.
+
+### Friends signal
+
+Markets your friends are actively trading, ranked by how many friends hold positions and how recently they entered.
+
+When three people in your Pulse are trading the same Champions League market, it shows up in your feed — even if you've never traded sports before. This is how noma surfaces opportunities through trust, not trending lists. The more friends trading a market, the stronger the signal.
+
+### Adjacency network
+
+Your friends' trading activity is just the starting point. Noma uses a **vector similarity engine** (pgvector HNSW index) to find markets that are semantically adjacent to what your social graph is trading — even if no one in your network has touched them yet.
+
+If your friends are trading "Fed rate cut in June," the adjacency network surfaces related markets like "10Y Treasury yield above 4.5%" and "S&P 500 above 5,500 by July" — markets connected by meaning, not just keywords.
+
+This layer expands your exposure beyond your direct social graph without losing the signal that made it relevant in the first place.
+
+### Top trader intelligence
+
+The leaderboard isn't just for bragging rights — it's a signal source. Noma tracks which markets are held by the highest-ranked traders on the platform, weighted by two factors:
+
+- **Trader rank** — positions from top-10 traders carry more weight than top-100
+- **Position conviction** — larger positions relative to portfolio size signal higher confidence
+
+When multiple leaderboard traders converge on the same market, that signal compounds. You're not copying trades — you're seeing where the best predictors on the platform are putting their capital.
+
+### Popularity momentum
+
+When social signals are sparse — maybe you're new, or your network is small — noma falls back to raw market momentum. This layer surfaces markets with accelerating volume: not just the most-traded markets, but the ones gaining traction fastest.
+
+A market that went from \$5K to \$50K in daily volume in the last 6 hours ranks higher than a stale \$200K market. Momentum catches breakouts early.
+
+### History-based recommendations
+
+This is where your feed becomes uniquely yours.
+
+Noma builds a **taste fingerprint** from your trading history using vector centroids — a mathematical profile of the types of markets you gravitate toward. Traded a lot of 5-minute BTC rounds? Your centroid shifts toward short-duration crypto. Heavy on politics? The engine learns that too.
+
+The system then scans for active markets that are semantically close to your taste profile but that you haven't traded yet. It's collaborative filtering applied to prediction markets: "traders like you also traded these."
+
+The more you trade, the sharper this layer gets. At 50+ resolved predictions, it starts producing highly targeted suggestions. At 200+, it's reading your trading personality better than you could describe it yourself.
+
+### Recurring series detection
+
+Many markets repeat on a schedule — 5-minute crypto rounds, hourly price predictions, daily political markets. If you've traded a recurring series before, noma automatically surfaces the current active round.
+
+Traded the 3:00 PM BTC 5-minute round yesterday? The 3:00 PM round today is waiting for you. This layer eliminates the friction of hunting for the next round of a market you already care about.
+
+## How scoring works
+
+Each signal layer produces a normalized relevance score for every candidate market. These scores are blended using weighted prioritization — social signals and personal history carry more weight than raw popularity — then deduplicated at the event level so you don't see five variations of the same question.
+
+The final ranking determines your feed order. Markets with strong signals across multiple layers rise to the top. A Champions League market that your friends are trading, that top-ranked traders hold positions in, and that matches your sports trading history will rank far above a market with only one weak signal.
+
+## Your feed improves over time
+
+| Your activity | What it unlocks |
+|---------------|-----------------|
+| **First session** | Popularity momentum + top trader intelligence |
+| **Add friends / join a Pulse** | Friends signal + adjacency network activate |
+| **10+ resolved predictions** | History-based recommendations begin calibrating |
+| **50+ resolved predictions** | Taste fingerprint sharpens — highly personalized suggestions |
+| **Trade recurring markets** | Series detection kicks in — your rounds find you |
+
+Every prediction you make, every friend you add, and every market you explore feeds back into the engine. Your feed at day 30 looks nothing like your feed at day 1.
+
+<CardGroup cols={2}>
+  <Card title="Start trading" icon="rocket" href="/quickstart">
+    Your feed starts learning the moment you place your first prediction.
+  </Card>
+  <Card title="Join a Pulse" icon="users" href="/social/pulses">
+    Add friends and activate the social signal layers — your feed gets better with every connection.
+  </Card>
+</CardGroup>
