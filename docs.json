@@ -69,6 +69,12 @@
             ]
           },
           {
+            "group": "Quests",
+            "pages": [
+              "quests/profit-match"
+            ]
+          },
+          {
             "group": "Funds",
             "pages": [
               "funds/overview"
